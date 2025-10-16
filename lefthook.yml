@@ -1,26 +1,34 @@
 pre-commit:
   parallel: true
-  jobs:
-    - run: git status
-    - run: npm run knip --fix
+  commands:
+    # 未使用コード検出（ステージされた対象拡張子に限定）
+    knip:
+      run: npm run knip -- --fix
       glob: "*.{js,ts,jsx,tsx}"
-      fail_text: "未使用のコード、依存関係、またはファイルが検出されました。'npx knip --fix'で修正するか、手動で削除してください。"
-    - run: npm run lint --write {staged_files}
-      glob: "*.{js,ts,jsx,tsx}"
-    - run: npm run typecheck
-      glob: "*.{js,ts,jsx,tsx}"
-    - run: npm run typecheck:stories
-      glob: "*.stories.tsx"
-    - run: npm run check-stories
-      glob: "src/components/**/*.tsx"
-      fail_text: "Storybookストーリーが見つからないコンポーネントがあります。'npm run generate-stories'を実行してください。"
 
+    # Lint（Biomeを直叩き／ステージされたファイルのみ渡す）
+    lint:
+      run: npx biome check --write {staged_files}
+      glob: "*.{js,ts,jsx,tsx}"
+
+    # 整形（任意。lintだけで十分なら消してOK）
+    format:
+      run: npx biome format --write {staged_files}
+      glob: "*.{js,ts,jsx,tsx}"
+
+    # Storybookの型チェック（storiesに変更があるときだけ）
+    typecheck_stories:
+      run: npm run typecheck:stories
+      glob: "*.stories.tsx"
+
+    # コンポーネントに対応するストーリーの有無チェック
+    check_stories:
+      run: npm run check-stories
+      glob: "src/components/**/*.tsx"
+
+# pre-push は軽く：型チェックだけ
 pre-push:
   parallel: true
-  jobs:
-    - run: npm run knip --fix
-    - run: npm run lint --write .
-    - run: npm run typecheck
-    - run: npm run typecheck:stories
-    - run: npm run build
-      glob: "*.{js,ts,jsx,tsx}"
+  commands:
+    typecheck:
+      run: npm run typecheck
