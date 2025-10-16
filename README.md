@@ -1,6 +1,6 @@
 # litmus9.com
 
-Vite + React + TypeScript + styled-components のプロジェクトです。tetest
+Vite + React + TypeScript + styled-components のプロジェクトです。
 
 ## 開発
 
