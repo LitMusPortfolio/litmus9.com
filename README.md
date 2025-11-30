@@ -6,16 +6,16 @@ Vite + React + TypeScript + styled-components のプロジェクトです。
 
 ```bash
 # 依存関係のインストール
-npm install
+pnpm install
 
 # 開発サーバーの起動
-npm run dev
+pnpm dev
 
 # ビルド
-npm run build
+pnpm build
 
 # プレビュー
-npm run preview
+pnpm preview
 ```
 
 ## デプロイ
@@ -46,7 +46,7 @@ npm run preview
 
 ```bash
 # Storybook の起動
-npm run storybook
+pnpm storybook
 ```
 
 ### ビジュアルリグレッションテスト
@@ -55,13 +55,13 @@ npm run storybook
 
 ```bash
 # スクリーンショットの撮影
-npm run screenshot
+pnpm screenshot
 
 # ビジュアルリグレッションテストの実行
-npm run visual-test
+pnpm visual-test
 
 # 期待値の更新（新しいスクリーンショットを正とする）
-npm run visual-test:update
+pnpm visual-test:update
 ```
 
 ### ビューポート設定

@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## 重要
 
 - サーバーは常に起動しています。自分で起動する必要はありません。
-- StoryでUIコンポーネントの動作を確認できます: `npm run storybook`
+- StoryでUIコンポーネントの動作を確認できます: `pnpm storybook`
 
 ## Git Worktreeの使い方
 
@@ -48,38 +48,38 @@ git worktree remove worktrees/feature
 
 ### 注意点
 - 同じブランチは1つのworktreeでしか使えない
-- 各worktreeで別々に`npm install`が必要
+- 各worktreeで別々に`pnpm install`が必要
 - .gitignoreされたファイルは共有されない
 
 ## 開発コマンド
 
 ```bash
 # 依存関係のインストール
-npm install
+pnpm install
 
 # 開発サーバー起動 (http://localhost:5173)
-npm run dev
+pnpm dev
 
 # ビルド
-npm run build
+pnpm build
 
 # コード品質チェック（コミット前に実行推奨）
-npm run lint          # Biomeによるリント
-npm run typecheck     # TypeScriptの型チェック
-npm run check-all     # 全チェック（knip + lint + typecheck）
+pnpm lint          # Biomeによるリント
+pnpm typecheck     # TypeScriptの型チェック
+pnpm check-all     # 全チェック（knip + lint + typecheck）
 
 # Storybook
-npm run storybook     # Storybook起動
-npm run build-storybook  # Storybookビルド
+pnpm storybook     # Storybook起動
+pnpm build-storybook  # Storybookビルド
 
 # ビジュアルテスト
-npm run screenshot    # スクリーンショット生成
-npm run visual-test   # ビジュアル回帰テスト実行
+pnpm screenshot    # スクリーンショット生成
+pnpm visual-test   # ビジュアル回帰テスト実行
 
 # ユニットテスト
-npm run test          # テスト実行（watchモード）
-npm run test:ui       # Vitest UIでテスト実行
-npm run test:coverage # カバレッジ付きテスト実行
+pnpm test          # テスト実行（watchモード）
+pnpm test:ui       # Vitest UIでテスト実行
+pnpm test:coverage # カバレッジ付きテスト実行
 ```
 
 ## アーキテクチャ概要
@@ -125,11 +125,11 @@ npm run test:coverage # カバレッジ付きテスト実行
 
 ### UIコンポーネント
 
-- **Modal System** (`src/components/Modal/`): 
+- **Modal System** (`src/components/Modal/`):
   - `Modal`: メインコンポーネント
   - `ModalContent`: variant対応（default, download, glass）
   - `ModalFocusManager`: フォーカストラップとキーボード操作
-  
+
 - **LazyImage/LazyVideo**: 遅延読み込み対応メディアコンポーネント
 - **TextWithBackground**: 背景画像付きテキスト表示
 - **SocialLinks**: SNSリンクボタン群
@@ -198,7 +198,7 @@ theme = {
 const StyledComponent = styled.div`
   color: ${({ theme }) => theme.colors.text};
   padding: ${({ theme }) => theme.spacing.md};
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: ${({ theme }) => theme.spacing.sm};
   }
@@ -224,7 +224,7 @@ const formattedText = wrapAlphanumeric("離途 Lit 2024");
 
 HashRouterを使用（GitHub Pages対応）：
 - `/` - HomePage
-- `/about` - AboutPage  
+- `/about` - AboutPage
 - `/works` - WorksPage
 - `/voicebank` - VoicebankPage（離途キャラクターページ）
 - `/contact` - ContactPage
@@ -252,7 +252,7 @@ GitHub Actionsによる自動デプロイ：
    - Biomeによるフォーマット
    - TypeScript型チェック
 
-2. **画像/動画アセット**: 
+2. **画像/動画アセット**:
    - `public/`以下に配置
    - 番号プレフィックスで整理（001_top/, 101_Lit/など）
    - 最適化フォーマット使用（WebP, WebM）

@@ -8,56 +8,61 @@ on:
 jobs:
   visual-test:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'npm'
-      
+          cache: 'pnpm'
+
       - name: Install dependencies
-        run: npm ci
-      
+        run: pnpm install --frozen-lockfile
+
       - name: Build Storybook
-        run: npm run build-storybook
-      
+        run: pnpm build-storybook
+
       - name: Serve Storybook and capture screenshots
         run: |
-          npx http-server storybook-static -p 6006 &
+          pnpm dlx http-server storybook-static -p 6006 &
           sleep 5
-          npx storycap http://localhost:6006 -o .reg/actual -V 320x568 -V 375x667 -V 414x896 -V 768x1024 -V 1024x768 -V 1280x720 -V 1440x900 -V 1920x1080
-      
+          pnpm dlx storycap http://localhost:6006 -o .reg/actual -V 320x568 -V 375x667 -V 414x896 -V 768x1024 -V 1024x768 -V 1280x720 -V 1440x900 -V 1920x1080
+
       - name: Upload screenshots
         uses: actions/upload-artifact@v4
         with:
           name: screenshots
           path: .reg/actual
           retention-days: 30
-      
+
       - name: Download base screenshots
         uses: actions/download-artifact@v4
         with:
           name: screenshots-base
           path: .reg/expected
         continue-on-error: true
-      
+
       - name: Compare screenshots
         id: compare
         run: |
           if [ -d ".reg/expected" ]; then
-            npx reg-cli .reg/actual .reg/expected .reg/diff -R .reg/report.html
+            pnpm dlx reg-cli .reg/actual .reg/expected .reg/diff -R .reg/report.html
           else
             echo "No base screenshots found. This is the first run."
             cp -r .reg/actual .reg/expected
           fi
         continue-on-error: true
-      
+
       - name: Upload diff report
         if: steps.compare.outcome == 'failure'
         uses: actions/upload-artifact@v4
@@ -67,7 +72,7 @@ jobs:
             .reg/diff
             .reg/report.html
           retention-days: 30
-      
+
       - name: Comment PR
         if: github.event_name == 'pull_request' && steps.compare.outcome == 'failure'
         uses: actions/github-script@v7
@@ -75,12 +80,12 @@ jobs:
           script: |
             const fs = require('fs');
             const comment = `## 📸 Visual Regression Test Results
-            
+
             Visual differences were detected. Please review the changes.
-            
+
             [Download the diff report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
             `;
-            
+
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,

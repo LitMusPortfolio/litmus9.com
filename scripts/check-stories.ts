@@ -54,7 +54,7 @@ if (result.missing.length > 0) {
     console.error(`   - ${file}`);
   });
   console.error(
-    `\n📝 Please run 'npm run generate-stories' to create missing stories.`,
+    `\n📝 Please run 'pnpm generate-stories' to create missing stories.`,
   );
   console.error(`   Or create them manually by adding .stories.tsx files.\n`);
   process.exit(1);
