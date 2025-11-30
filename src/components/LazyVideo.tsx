@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { videoCache } from "@/utils/videoCache";
 
-interface VideoSource {
+type VideoSource = {
   src: string;
   type: string;
-}
+};
 
-interface LazyVideoProps {
+type LazyVideoProps = {
   src?: string;
   sources?: VideoSource[];
   poster?: string;
@@ -18,7 +18,7 @@ interface LazyVideoProps {
   className?: string;
   onLoadedData?: () => void;
   onError?: () => void;
-}
+};
 
 const VideoWrapper = styled.div`
   position: relative;

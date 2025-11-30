@@ -10,12 +10,12 @@ import ProfileSection from "../components/ProfileSection";
 import type { CharacterDisplayConfig } from "../config/characterConfig";
 import { getCharacterConfig } from "../config/characterConfig";
 
-interface LitCharacterSectionProps {
+type LitCharacterSectionProps = {
   // サイズプリセット: "default" | "large" | "small" | "compact"
   sizePreset?: keyof typeof import("../config/characterConfig").CHARACTER_PRESETS;
   // カスタム設定（プリセットを上書き）
   customConfig?: Partial<CharacterDisplayConfig>;
-}
+};
 
 // CSS変数を生成する関数
 const generateCharacterSizeVars = (config: CharacterDisplayConfig) => css`
@@ -36,11 +36,11 @@ const generateCharacterSizeVars = (config: CharacterDisplayConfig) => css`
   }
 `;
 
-interface DemoSong {
+type DemoSong = {
   id: string;
   title: string;
   embedId: string;
-}
+};
 
 // プロフィールデータ（左側）
 const PROFILE_DATA_LEFT: ProfileData[] = [

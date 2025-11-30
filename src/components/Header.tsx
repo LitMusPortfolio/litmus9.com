@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { theme } from "../styles/theme";
+import { theme } from "@/styles/theme";
 import LazyImage from "./LazyImage";
 
 const HeaderContainer = styled.header`

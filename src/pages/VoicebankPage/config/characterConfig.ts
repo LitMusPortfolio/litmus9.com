@@ -1,5 +1,5 @@
 // キャラクター表示設定の一元管理
-export interface CharacterDisplayConfig {
+export type CharacterDisplayConfig = {
   desktop: {
     height: string;
     maxWidth: string;
@@ -15,7 +15,7 @@ export interface CharacterDisplayConfig {
   mobile: {
     display: "none" | "block";
   };
-}
+};
 
 // デフォルト設定
 const DEFAULT_CHARACTER_CONFIG: CharacterDisplayConfig = {

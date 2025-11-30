@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import LazyVideo from "./LazyVideo";
 
-interface VideoBackgroundProps {
+type VideoBackgroundProps = {
   opacity?: number;
-}
+};
 
 export const VideoBackground = styled(LazyVideo)<VideoBackgroundProps>`
   position: absolute;

@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { theme } from "../styles/theme";
+import { theme } from "@/styles/theme";
 
-interface StyledButtonProps {
+type StyledButtonProps = {
   $active?: boolean;
   $underlineOnActive?: boolean;
   $variant?: "default" | "primary" | "secondary" | "ghost";
   $size?: "sm" | "md" | "lg";
-}
+};
 
 export const StyledButton = styled.button<StyledButtonProps>`
   background: transparent;
@@ -45,12 +45,5 @@ export const StyledButton = styled.button<StyledButtonProps>`
   &:disabled {
     opacity: ${theme.opacity[60]};
     cursor: not-allowed;
-  }
-`;
-
-// 下線なしバージョン
-export const ButtonNoUnderline = styled(StyledButton)`
-  &::after {
-    display: none;
   }
 `;

@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { Section } from "../../../components/Layout";
-import LazyImage from "../../../components/LazyImage";
-import { SocialLinks as SocialLinksComponent } from "../../../components/SocialLinks";
-import TextWithBackground from "../../../components/TextWithBackground";
-import { VideoBackground } from "../../../components/VideoBackground";
+import { Section } from "@/components/Layout";
+import LazyImage from "@/components/LazyImage";
+import { SocialLinks as SocialLinksComponent } from "@/components/SocialLinks";
+import TextWithBackground from "@/components/TextWithBackground";
+import { VideoBackground } from "@/components/VideoBackground";
 
 const HomeSection = styled(Section)`
   position: fixed;

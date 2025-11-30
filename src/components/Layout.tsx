@@ -1,4 +1,3 @@
-import type React from "react";
 import styled from "styled-components";
 import { theme } from "@/styles/theme";
 
@@ -21,79 +20,59 @@ export const Container = styled.div`
   z-index: ${theme.zIndex.content};
 `;
 
+// サイドデコレーション用スタイルコンポーネント
+const DecorationContainer = styled.div<{ $side: "left" | "right" }>`
+  position: fixed;
+  ${({ $side }) => ($side === "right" ? "right: -20vw" : "left: -20vw")};
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  width: 40vw;
+  height: 15vh;
+  z-index: ${({ $side }) => ($side === "right" ? -200 : -50)};
+  pointer-events: none;
+`;
+
+const DecorationImage = styled.img<{ $clipTop: boolean }>`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: auto;
+  opacity: ${theme.opacity[80]};
+  clip-path: ${({ $clipTop }) =>
+    $clipTop ? "inset(0 0 50% 0)" : "inset(50% 0 0 0)"};
+`;
+
 // サイドデコレーションコンポーネント
-export const SideDecoration: React.FC<{ svgPath?: string }> = ({ svgPath }) => {
+type SideDecorationProps = {
+  svgPath?: string;
+};
+
+export function SideDecoration({ svgPath }: SideDecorationProps) {
   if (!svgPath) return null;
 
   return (
     <>
       {/* 右側に配置 - 下半分を表示 */}
-      <div
-        style={{
-          position: "fixed",
-          right: "-20vw",
-          top: "50%",
-          transform: "translateY(-50%) rotate(-90deg)",
-          width: "40vw",
-          height: "15vh",
-          zIndex: -200,
-          pointerEvents: "none",
-        }}
-      >
-        <img
-          src={svgPath}
-          alt=""
-          style={{
-            position: "absolute",
-            left: "50%",
-            top: "50%",
-            transform: "translate(-50%, -50%)",
-            height: "100%",
-            width: "auto",
-            opacity: 0.8,
-            clipPath: "inset(0 0 50% 0)", // 上半分をクリップ（下半分を表示）
-          }}
-        />
-      </div>
+      <DecorationContainer $side="right">
+        <DecorationImage src={svgPath} alt="" $clipTop />
+      </DecorationContainer>
 
       {/* 左側に配置 - 上半分を表示 */}
-      <div
-        style={{
-          position: "fixed",
-          left: "-20vw",
-          top: "50%",
-          transform: "translateY(-50%) rotate(-90deg)",
-          width: "40vw",
-          height: "15vh",
-          zIndex: -50,
-          pointerEvents: "none",
-        }}
-      >
-        <img
-          src={svgPath}
-          alt=""
-          style={{
-            position: "absolute",
-            left: "50%",
-            top: "50%",
-            transform: "translate(-50%, -50%)",
-            height: "100%",
-            width: "auto",
-            opacity: 0.8,
-            clipPath: "inset(50% 0 0 0)", // 下半分をクリップ（上半分を表示）
-          }}
-        />
-      </div>
+      <DecorationContainer $side="left">
+        <DecorationImage src={svgPath} alt="" $clipTop={false} />
+      </DecorationContainer>
     </>
   );
-};
+}
 
 // グリッドコンテナ
-interface GridContainerProps {
+type GridContainerProps = {
   $columns?: string;
   $gap?: string;
   $mobileColumns?: string;
-}
+};
 
 export const GridContainer = styled.div<GridContainerProps>`
   display: grid;

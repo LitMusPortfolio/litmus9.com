@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-interface TextWithBackgroundProps {
+type TextWithBackgroundProps = {
   children: React.ReactNode;
   isPurple?: boolean;
-}
+};
 
 const Container = styled.span`
   position: relative;
@@ -20,7 +20,7 @@ const Container = styled.span`
 `;
 
 const Background = styled.div<{
-  isPurple?: boolean;
+  $isPurple?: boolean;
 }>`
   position: absolute;
   /* テキストの実際の高さに合わせる */
@@ -29,7 +29,7 @@ const Background = styled.div<{
   left: -0.001rem;
   right: -0.001rem;
   background-image: ${(props) =>
-    props.isPurple ? "url('/titleBG.webp')" : "url('/nameBG.webp')"};
+    props.$isPurple ? "url('/titleBG.webp')" : "url('/nameBG.webp')"};
   background-size: auto 100%;
   background-position: center;
   background-repeat: repeat-x;
@@ -51,7 +51,7 @@ export default function TextWithBackground({
 }: TextWithBackgroundProps) {
   return (
     <Container>
-      <Background isPurple={isPurple} />
+      <Background $isPurple={isPurple} />
       <Content>{children}</Content>
     </Container>
   );

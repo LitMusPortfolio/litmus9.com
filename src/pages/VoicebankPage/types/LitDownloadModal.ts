@@ -1,10 +1,10 @@
 // 型定義
-interface DownloadLink {
+type DownloadLink = {
   text: string;
   url: string;
-}
+};
 
-interface DownloadItem {
+type DownloadItem = {
   id: number;
   type: "talk" | "sing" | "other";
   category: string;
@@ -22,7 +22,7 @@ interface DownloadItem {
     description: string[][];
     links?: DownloadLink[];
   };
-}
+};
 
 // 型をエクスポート
 export type { DownloadItem };

@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { theme } from "../styles/theme";
+import { theme } from "@/styles/theme";
 
 // 共通タイトル付き罫線コンポーネント
-interface TitleWithLineProps {
+type TitleWithLineProps = {
   title: string;
   className?: string;
-}
+};
 
 // タイトルと罫線のコンテナ
 const Container = styled.div`
