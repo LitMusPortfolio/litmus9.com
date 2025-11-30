@@ -60,32 +60,30 @@ const SNSLinksWrapper = styled.div`
 
 export default function Footer() {
   return (
-    <>
-      <FooterContainer>
-        <LeftSection>
-          <PageTop
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            <LazyImage
-              src="/001_top/FooterPageTop.svg"
-              alt="Pageの一番上に移動するボタン。Page Topと書かれている。"
-              aria-hidden="true"
-            />
-          </PageTop>
-        </LeftSection>
-        <RightSection>
-          <SNSLinksWrapper>
-            <span>SNS</span>
-            <SocialLinks size="small" />
-          </SNSLinksWrapper>
-          <Contact>
-            <Link to="/contact">CONTACT</Link>
-          </Contact>
-          <Copyright>
-            <p>&copy; 2022 - 2025 LitMus9_. All rights reserved.</p>
-          </Copyright>
-        </RightSection>
-      </FooterContainer>
-    </>
+    <FooterContainer>
+      <LeftSection>
+        <PageTop
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          <LazyImage
+            src="/001_top/FooterPageTop.svg"
+            alt="Pageの一番上に移動するボタン。Page Topと書かれている。"
+            aria-hidden="true"
+          />
+        </PageTop>
+      </LeftSection>
+      <RightSection>
+        <SNSLinksWrapper>
+          <span>SNS</span>
+          <SocialLinks size="small" />
+        </SNSLinksWrapper>
+        <Contact>
+          <Link to="/contact">CONTACT</Link>
+        </Contact>
+        <Copyright>
+          <p>&copy; 2022 - 2025 LitMus9_. All rights reserved.</p>
+        </Copyright>
+      </RightSection>
+    </FooterContainer>
   );
 }

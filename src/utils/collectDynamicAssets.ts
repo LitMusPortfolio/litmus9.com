@@ -52,9 +52,13 @@ function extractStaticAssets(module: unknown): Set<string> {
     visited.add(obj as object);
 
     if (Array.isArray(obj)) {
-      obj.forEach((item) => traverse(item, visited));
+      for (const item of obj) {
+        traverse(item, visited);
+      }
     } else {
-      Object.values(obj).forEach((value) => traverse(value, visited));
+      for (const value of Object.values(obj)) {
+        traverse(value, visited);
+      }
     }
   }
 
@@ -85,7 +89,9 @@ export async function collectHomePageAssets(): Promise<{
       "/LitMusBG.webp", // HomePageの背景画像
     ];
 
-    knownAssets.forEach((asset) => paths.add(asset));
+    for (const asset of knownAssets) {
+      paths.add(asset);
+    }
 
     return categorizeAssets(Array.from(paths));
   } catch (error) {
@@ -161,9 +167,9 @@ export async function collectVoicebankPageAssets(): Promise<{
       "/010_PageSideTitleSvg/RULES.svg",
     ];
 
-    [...characterAssets, ...sideDecorations].forEach((asset) =>
-      paths.add(asset),
-    );
+    for (const asset of [...characterAssets, ...sideDecorations]) {
+      paths.add(asset);
+    }
 
     return categorizeAssets(Array.from(paths));
   } catch (error) {
