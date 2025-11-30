@@ -32,7 +32,7 @@ export default function Modal({
   imageUrl,
   variant = "default",
   ariaLabel,
-}: ModalProps): React.JSX.Element {
+}: ModalProps): React.JSX.Element | null {
   const modalRef = useRef<HTMLDivElement>(null);
 
   // フォーカス管理とESCキー処理
@@ -53,7 +53,7 @@ export default function Modal({
 
   // isOpenがfalseの場合は何もレンダリングしない
   if (!isOpen) {
-    return <></>;
+    return null;
   }
 
   return (
