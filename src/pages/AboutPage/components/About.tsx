@@ -10,7 +10,7 @@ const ContentWrapper = styled.div`
   grid-template-columns: 6fr 7fr;
   gap: 4rem;
   align-items: center;
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     grid-template-columns: 1fr;
     gap: 3rem;

@@ -23,7 +23,8 @@
     "screenshot:ci": "storycap --serverCmd \"pnpm storybook -- --ci\" --serverTimeout 60000",
     "visual-test": "reg-suit run",
     "visual-test:update": "reg-suit run --update",
-    "visual-compare": "reg-cli .reg/actual .reg/expected .reg/diff -R .reg/report.html"
+    "visual-compare": "reg-cli .reg/actual .reg/expected .reg/diff -R .reg/report.html",
+    "chromatic": "npx chromatic --project-token=chpt_86b2af203940de1"
   },
   "knip": {
     "entry": [
@@ -68,6 +69,7 @@
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.5.0",
     "babel-plugin-styled-components": "^2.1.4",
+    "chromatic": "13.3.4",
     "knip": "^5.59.1",
     "lefthook": "^1.11.13",
     "reg-cli": "^0.18.10",

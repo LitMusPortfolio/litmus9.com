@@ -66,6 +66,9 @@ importers:
       babel-plugin-styled-components:
         specifier: ^2.1.4
         version: 2.1.4(@babel/core@7.28.5)(styled-components@6.1.19(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
+      chromatic:
+        specifier: 13.3.4
+        version: 13.3.4
       knip:
         specifier: ^5.59.1
         version: 5.70.2(@types/node@22.19.1)(typescript@5.8.3)
@@ -1226,6 +1229,18 @@ packages:
 
   chownr@1.1.4:
     resolution: {integrity: sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==}
+
+  chromatic@13.3.4:
+    resolution: {integrity: sha512-TR5rvyH0ESXobBB3bV8jc87AEAFQC7/n+Eb4XWhJz6hW3YNxIQPVjcbgLv+a4oKHEl1dUBueWSoIQsOVGTd+RQ==}
+    hasBin: true
+    peerDependencies:
+      '@chromatic-com/cypress': ^0.*.* || ^1.0.0
+      '@chromatic-com/playwright': ^0.*.* || ^1.0.0
+    peerDependenciesMeta:
+      '@chromatic-com/cypress':
+        optional: true
+      '@chromatic-com/playwright':
+        optional: true
 
   class-utils@0.3.6:
     resolution: {integrity: sha512-qOhPa/Fj7s6TY8H8esGu5QNpMMQxz79h+urzrNYN6mn+9BnxlDGf5QZ+XeCDsxSjPqsSR56XOZOJmpeurnLMeg==}
@@ -4077,6 +4092,8 @@ snapshots:
   check-error@2.1.1: {}
 
   chownr@1.1.4: {}
+
+  chromatic@13.3.4: {}
 
   class-utils@0.3.6:
     dependencies:
