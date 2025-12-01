@@ -1,4 +1,4 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/react-vite";
 import { MemoryRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "../src/styles/GlobalStyles";
@@ -72,9 +72,10 @@ const preview: Preview = {
       },
     },
     viewport: {
-      viewports: CUSTOM_VIEWPORTS,
+      options: CUSTOM_VIEWPORTS,
     },
   },
+
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
@@ -85,6 +86,8 @@ const preview: Preview = {
       </ThemeProvider>
     ),
   ],
+
+  tags: ["autodocs"],
 };
 
 export default preview;
