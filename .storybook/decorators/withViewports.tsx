@@ -1,4 +1,4 @@
-import type { Decorator } from "@storybook/react";
+import type { Decorator } from "@storybook/react-vite";
 
 export const withViewports: Decorator = (Story, _context) => {
   // storycapでのスクリーンショット時に複数のビューポートでキャプチャする設定
