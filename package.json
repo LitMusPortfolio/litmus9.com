@@ -24,7 +24,7 @@
     "visual-test": "reg-suit run",
     "visual-test:update": "reg-suit run --update",
     "visual-compare": "reg-cli .reg/actual .reg/expected .reg/diff -R .reg/report.html",
-    "chromatic": "npx chromatic --project-token=chpt_86b2af203940de1"
+    "chromatic": "chromatic"
   },
   "knip": {
     "entry": [
@@ -56,6 +56,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.0.0-beta.5",
+    "@chromatic-com/storybook": "4.1.3",
     "@playwright/test": "^1.52.0",
     "@storybook/addon-essentials": "^8.6.14",
     "@storybook/addon-interactions": "^8.6.14",
