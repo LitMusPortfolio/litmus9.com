@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { imageCache } from "@/utils/imageCache";
 
-interface LazyImageProps {
+type LazyImageProps = {
   src: string;
   alt: string;
   className?: string;
@@ -11,7 +11,7 @@ interface LazyImageProps {
   onError?: () => void;
   fallback?: string;
   eager?: boolean; // ヘッダーなど、即座にロードすべき画像用
-}
+};
 
 const ImageWrapper = styled.div`
   position: relative;

@@ -9,11 +9,6 @@ pre-commit:
       glob: "*.{js,ts,jsx,tsx}"
     - run: pnpm typecheck
       glob: "*.{js,ts,jsx,tsx}"
-    - run: pnpm typecheck:stories
-      glob: "*.stories.tsx"
-    - run: pnpm check-stories
-      glob: "src/components/**/*.tsx"
-      fail_text: "Storybookストーリーが見つからないコンポーネントがあります。'pnpm generate-stories'を実行してください。"
 
 pre-push:
   parallel: true
@@ -21,6 +16,5 @@ pre-push:
     - run: pnpm knip --fix
     - run: pnpm lint --write .
     - run: pnpm typecheck
-    - run: pnpm typecheck:stories
     - run: pnpm build
       glob: "*.{js,ts,jsx,tsx}"

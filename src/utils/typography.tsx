@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 /**
  * テキスト内の英数字部分を<span class="en">で囲む
@@ -26,17 +26,17 @@ export const wrapAlphanumeric = (text: string): ReactNode => {
 /**
  * 見出し用のスタイル付きコンポーネント
  */
-interface StyledHeadingProps {
+type StyledHeadingProps = {
   level: 1 | 2 | 3 | 4 | 5 | 6;
   children: string;
   className?: string;
-}
+};
 
-export const StyledHeading: FC<StyledHeadingProps> = ({
+export function StyledHeading({
   level,
   children,
   className,
-}) => {
+}: StyledHeadingProps) {
   const content = wrapAlphanumeric(children);
 
   switch (level) {
@@ -55,4 +55,4 @@ export const StyledHeading: FC<StyledHeadingProps> = ({
     default:
       return <h1 className={className}>{content}</h1>;
   }
-};
+}

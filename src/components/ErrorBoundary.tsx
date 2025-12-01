@@ -1,20 +1,20 @@
 import type { ReactNode } from "react";
 import { Component } from "react";
 import styled from "styled-components";
-import { theme } from "../styles/theme";
-import { formatErrorInfo, getErrorMessage } from "../utils/errorReporting";
+import { theme } from "@/styles/theme";
+import { formatErrorInfo, getErrorMessage } from "@/utils/errorReporting";
 
-interface Props {
+type Props = {
   children: ReactNode;
   fallback?: ReactNode;
   onError?: (error: Error, errorInfo: React.ErrorInfo) => void;
-}
+};
 
-interface State {
+type State = {
   hasError: boolean;
   error?: Error;
   errorMessage?: string;
-}
+};
 
 const ErrorContainer = styled.div`
   display: flex;
@@ -37,6 +37,11 @@ const ErrorMessage = styled.p`
   font-size: 1rem;
   margin-bottom: 2rem;
   max-width: 600px;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: ${theme.space.md};
 `;
 
 const RetryButton = styled.button`
@@ -103,13 +108,12 @@ export default class ErrorBoundary extends Component<Props, State> {
           <ErrorMessage>
             {this.state.errorMessage || "予期しないエラーが発生しました。"}
           </ErrorMessage>
-          <RetryButton onClick={this.handleReset}>もう一度試す</RetryButton>
-          <RetryButton
-            onClick={this.handleReload}
-            style={{ marginLeft: "1rem" }}
-          >
-            ページを再読み込み
-          </RetryButton>
+          <ButtonContainer>
+            <RetryButton onClick={this.handleReset}>もう一度試す</RetryButton>
+            <RetryButton onClick={this.handleReload}>
+              ページを再読み込み
+            </RetryButton>
+          </ButtonContainer>
         </ErrorContainer>
       );
     }

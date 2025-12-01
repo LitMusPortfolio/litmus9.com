@@ -1,9 +1,9 @@
 // ビデオメタデータの型定義
-interface VideoMetadata {
+type VideoMetadata = {
   duration?: number;
   width?: number;
   height?: number;
-}
+};
 
 // グローバルなビデオキャッシュマネージャー
 class VideoCacheManager {

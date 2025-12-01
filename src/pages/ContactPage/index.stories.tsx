@@ -1,18 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import ContactPage from "./index";
 
-const meta = {
-  title: "Pages/Contact/ContactPage",
+const meta: Meta<typeof ContactPage> = {
+  title: "Pages/ContactPage",
   component: ContactPage,
   parameters: {
     layout: "fullscreen",
   },
-  tags: ["autodocs"],
-  argTypes: {},
-} satisfies Meta<typeof ContactPage>;
+};
 
 export default meta;
-
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof ContactPage>;
 
 export const Default: Story = {};

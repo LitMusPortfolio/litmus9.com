@@ -85,6 +85,24 @@ const WorkRequester = styled.p`
   font-size: ${theme.typography.fontSize.xs};
 `;
 
+const PlayButtonOverlay = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  text-shadow: 0 0 0.5em black;
+  opacity: ${theme.opacity[80]};
+  pointer-events: none;
+`;
+
+const EmptyPreview = styled.div`
+  width: 100%;
+  height: 100%;
+  background: #000;
+`;
+
 type TabId = Category | "all";
 
 // YouTubeとニコニコ動画のIDを抽出する関数
@@ -109,7 +127,11 @@ const getVideoInfo = (
 };
 
 // 動画プレビューコンポーネント
-const VideoPreview: React.FC<{ link: string }> = ({ link }) => {
+type VideoPreviewProps = {
+  link: string;
+};
+
+function VideoPreview({ link }: VideoPreviewProps) {
   const { type, id } = getVideoInfo(link);
 
   if (type === "youtube" && id) {
@@ -128,21 +150,7 @@ const VideoPreview: React.FC<{ link: string }> = ({ link }) => {
             }
           }}
         />
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            fontSize: "3rem",
-            color: "white",
-            textShadow: "0 0 0.5em black",
-            opacity: 0.8,
-            pointerEvents: "none",
-          }}
-        >
-          ▶
-        </div>
+        <PlayButtonOverlay>▶</PlayButtonOverlay>
       </>
     );
   }
@@ -160,9 +168,9 @@ const VideoPreview: React.FC<{ link: string }> = ({ link }) => {
     );
   }
 
-  // その他は黒背景に再生ボタンを表示
-  return <div style={{ width: "100%", height: "100%", background: "#000" }} />;
-};
+  // その他は黒背景を表示
+  return <EmptyPreview />;
+}
 
 const WORK_TABS: TabItem<TabId>[] = [
   { id: "all", label: "ALL" },

@@ -1,1 +1,1 @@
-export * from "./LitDownloadModal";
+export type { DownloadItem } from "./LitDownloadModal";

@@ -84,10 +84,10 @@ const CardDescription = styled.p`
 `;
 
 // コンポーネントのProps
-interface DownloadItemCardProps {
+type DownloadItemCardProps = {
   item: DownloadItem;
   onClick: () => void;
-}
+};
 
 // ダウンロードアイテムカードコンポーネント
 export default function DownloadItemCard({

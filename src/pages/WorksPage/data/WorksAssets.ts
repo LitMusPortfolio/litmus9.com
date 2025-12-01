@@ -1,12 +1,12 @@
 export type Category = "music" | "illustration" | "movie" | "other";
 
-interface Work {
+type Work = {
   title: string;
   category: Category[];
   description: string;
   requester: string;
   link: string;
-}
+};
 
 export const worksData: Work[] = [
   {

@@ -43,10 +43,10 @@ const EmailText = styled.span`
   }
 `;
 
-interface EmailProtectedProps {
+type EmailProtectedProps = {
   email: string;
   showButtonText?: string;
-}
+};
 
 export default function EmailProtected({
   email,

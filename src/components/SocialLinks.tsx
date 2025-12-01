@@ -2,10 +2,10 @@ import styled from "styled-components";
 import type { SocialLink } from "@/types";
 import LazyImage from "./LazyImage";
 
-interface SocialLinksProps {
+type SocialLinksProps = {
   links?: SocialLink[];
   size?: "small" | "medium" | "large";
-}
+};
 
 const SocialLinksContainer = styled.div`
   display: flex;

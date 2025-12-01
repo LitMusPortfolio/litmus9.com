@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
 
-interface ModalFocusManagerProps {
+type ModalFocusManagerProps = {
   isOpen: boolean;
   modalRef: React.RefObject<HTMLDivElement>;
   onClose: () => void;
-}
+};
 
 export function useModalFocusManager({
   isOpen,

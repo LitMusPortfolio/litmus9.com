@@ -4,11 +4,11 @@ import { theme } from "@/styles/theme";
 import { glassmorphism } from "@/styles/utils";
 
 // モーダルコンテンツエリア
-interface ModalContentProps {
+type ModalContentProps = {
   $variant?: string;
   title?: string;
   children: React.ReactNode;
-}
+};
 
 const ContentContainer = styled.div<{ $variant?: string }>`
   padding: ${(props) => (props.$variant === "download" ? theme.space["2xl"] : theme.space.xl)};

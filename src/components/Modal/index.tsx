@@ -9,7 +9,7 @@ import { useModalFocusManager, useScrollLock } from "./ModalFocusManager";
 import { ModalOverlay } from "./ModalOverlay";
 
 // モーダルのプロップス型定義
-interface ModalProps {
+type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
   children: ReactNode;
@@ -19,7 +19,7 @@ interface ModalProps {
   imageUrl?: string;
   variant?: "default" | "download" | "glass";
   ariaLabel?: string;
-}
+};
 
 // メインモーダルコンポーネント
 export default function Modal({

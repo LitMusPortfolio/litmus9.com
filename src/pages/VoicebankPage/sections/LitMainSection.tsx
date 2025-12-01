@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 import { Section } from "@/components/Layout";
 import LazyImage from "@/components/LazyImage";
 import { VideoBackground } from "@/components/VideoBackground";
-import { theme } from "../../../styles/theme";
+import { theme } from "@/styles/theme";
 
 // アニメーション定義
 const floatAnimation = keyframes`

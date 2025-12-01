@@ -2,18 +2,18 @@ import { forwardRef, useEffect, useRef } from "react";
 import { StyledButton } from "./StyledButton";
 import { TabContainer } from "./TabComponents";
 
-export interface TabItem<T extends string = string> {
+export type TabItem<T extends string = string> = {
   id: T;
   label: string;
-}
+};
 
-interface FilterTabsProps {
+type FilterTabsProps = {
   tabs: TabItem[];
   activeTab: string;
   onTabChange: (tabId: string) => void;
   ariaLabel?: string;
   ariaControls?: string;
-}
+};
 
 // FilterTabsコンポーネント（タブのキーボードナビゲーション機能付き）
 const FilterTabs = forwardRef<HTMLDivElement, FilterTabsProps>(

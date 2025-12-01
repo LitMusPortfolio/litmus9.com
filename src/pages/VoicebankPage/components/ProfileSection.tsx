@@ -2,14 +2,14 @@ import styled from "styled-components";
 import { theme } from "@/styles/theme";
 
 // 型定義
-interface ProfileData {
+type ProfileData = {
   label: string;
   value: string;
-}
+};
 
-interface ProfileSectionProps {
+type ProfileSectionProps = {
   data: ProfileData[];
-}
+};
 
 // スタイルコンポーネント
 const ProfileContainer = styled.div`

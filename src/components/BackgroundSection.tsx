@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { Section } from "@/components/Layout";
 
-interface BackgroundSectionProps {
+type BackgroundSectionProps = {
   backgroundImage?: string;
   overlay?: boolean;
-}
+};
 
 export const BackgroundSection = styled(Section)<BackgroundSectionProps>`
   position: relative;

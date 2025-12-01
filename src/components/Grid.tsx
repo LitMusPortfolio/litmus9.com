@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { theme } from "@/styles/theme";
 
 // グリッドコンポーネントのProps
-interface GridProps<T> {
+type GridProps<T> = {
   items: T[];
   renderItem: (item: T, index: number) => ReactNode;
   keyExtractor?: (item: T, index: number) => string | number;
@@ -19,7 +19,7 @@ interface GridProps<T> {
   id?: string;
   role?: string;
   "aria-label"?: string;
-}
+};
 
 // デフォルトのグリッド設定
 const DEFAULT_COLUMNS = {

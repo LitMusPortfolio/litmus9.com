@@ -1,3 +1,3 @@
 export { imageCache } from "./imageCache";
-export * from "./typography";
+export { StyledHeading, wrapAlphanumeric } from "./typography";
 export { videoCache } from "./videoCache";

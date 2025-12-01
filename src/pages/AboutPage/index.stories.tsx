@@ -1,18 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import AboutPage from "./index";
 
-const meta = {
-  title: "Pages/About/AboutPage",
+const meta: Meta<typeof AboutPage> = {
+  title: "Pages/AboutPage",
   component: AboutPage,
   parameters: {
     layout: "fullscreen",
   },
-  tags: ["autodocs"],
-  argTypes: {},
-} satisfies Meta<typeof AboutPage>;
+};
 
 export default meta;
-
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof AboutPage>;
 
 export const Default: Story = {};

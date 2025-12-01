@@ -31,6 +31,10 @@ const Profile = styled.div`
   gap: 0.5rem;
 `;
 
+const SubHeading = styled.h3`
+  margin-bottom: 1rem;
+`;
+
 const AboutSection = styled(BackgroundSection)`
   min-height: 0;
 `;
@@ -53,11 +57,11 @@ export default function About() {
 
           <div>
             <TitleWithLine title="LitMus" />
-            <h3 style={{ marginBottom: "1rem" }}>
+            <SubHeading>
               音楽 / イラスト / デザイン
               <br />
               動画 / 合成音声用ライブラリ提供
-            </h3>
+            </SubHeading>
 
             <Profile>
               <p>2000年9月9日生まれ。</p>

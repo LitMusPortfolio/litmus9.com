@@ -2,20 +2,20 @@ import styled, { css, keyframes } from "styled-components";
 import Modal from "@/components/Modal";
 import { theme } from "@/styles/theme";
 
-// 型定義
-interface DownloadLink {
+// 型定義（DownloadModal固有の拡張型）
+type DownloadModalLink = {
   text: string;
   url: string;
   primary?: boolean;
   icon?: string;
-}
+};
 
-interface DownloadContent {
+type DownloadContent = {
   description: string[];
-  links: DownloadLink[];
-}
+  links: DownloadModalLink[];
+};
 
-interface DownloadModalProps {
+type DownloadModalProps = {
   isOpen: boolean;
   onClose: () => void;
   title: string;
@@ -23,7 +23,7 @@ interface DownloadModalProps {
   defaultImage?: string;
   content?: DownloadContent;
   children?: React.ReactNode;
-}
+};
 
 // アニメーション
 const slideInUp = keyframes`

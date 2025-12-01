@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "../styles/theme";
+import { theme } from "@/styles/theme";
 import TextWithBackground from "./TextWithBackground";
 
 // セクションタイトルのラッパー
@@ -14,10 +14,10 @@ const SectionTitleWrapper = styled.h1`
   }
 `;
 
-interface SectionTitleProps {
+type SectionTitleProps = {
   children: string;
   isPurple?: boolean;
-}
+};
 
 export default function SectionTitle({
   children,
