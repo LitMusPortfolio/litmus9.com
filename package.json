@@ -25,7 +25,6 @@
     "@typescript-eslint/parser": "catalog:",
     "eslint": "catalog:",
     "eslint-plugin-baseline-js": "catalog:",
-    "eslint-plugin-drizzle": "catalog:",
     "eslint-plugin-no-comments": "catalog:",
     "eslint-plugin-react-hooks": "catalog:",
     "fallow": "catalog:stack",

@@ -29,7 +29,7 @@ oxlintやプラグインを更新したときは、プラグインをoxlintのjs
 
 テンプレートにある認証、データベース、API、機能フラグ、サーバー状態の仕組みは持たない。
 このサイトは静的な掲載物だけで成り立ち、ログインや保存するデータを持たない。
-使わない依存と未参照のカタログ項目はfallowが落とすため、better-auth、Drizzle、D1、ElysiaJS、Eden、OpenFeature、TanStack Queryを依存から外した。
+使わない依存と未参照のカタログ項目はfallowが落とすため、better-auth、Drizzle、D1、ElysiaJS、Eden、OpenFeature、TanStack Queryを依存から外した。Drizzle用のlintプラグインも外した。
 データベースがないので、verifyからdb:checkの段も外した。
 データベースやAPIが必要になったら、テンプレートの構成に戻して足す。
 
