@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 
-import { PageSection } from "#/shared/ui/page-section";
-import { SectionTitle } from "#/shared/ui/section-title";
+import { PageSection, SectionTitle } from "#/shared/ui";
 
 import { AboutProfile } from "./about-profile";
 

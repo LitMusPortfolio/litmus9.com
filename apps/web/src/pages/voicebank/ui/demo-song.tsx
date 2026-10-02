@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { YoutubeThumbnail } from "#/shared/ui/youtube-thumbnail";
+import { YoutubeThumbnail } from "#/shared/ui";
 
 const DemoSong = ({ title, link }: Readonly<{ title: string; link: string }>): ReactNode => (
   <a

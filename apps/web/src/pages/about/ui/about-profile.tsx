@@ -1,8 +1,6 @@
 import type { ReactNode } from "react";
 
-import { Lines } from "#/shared/ui/lines";
-import { Paragraphs } from "#/shared/ui/paragraphs";
-import { TitleWithLine } from "#/shared/ui/title-with-line";
+import { Lines, Paragraphs, TitleWithLine } from "#/shared/ui";
 
 const NAME = "LitMus";
 const ROLES = [

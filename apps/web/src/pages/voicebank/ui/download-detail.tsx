@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 import type { DownloadItem } from "#/pages/voicebank/model/downloads";
-import { DialogContent } from "#/shared/ui/dialog-content";
+import { DialogContent } from "#/shared/ui";
 
 import { DownloadBody } from "./download-body";
 

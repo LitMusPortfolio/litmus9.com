@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { Paragraphs } from "#/shared/ui/paragraphs";
+import { Paragraphs } from "#/shared/ui";
 
 const TAGLINE = ["優しさと吐息が香る", "穏やかな男声ソフトウェア。"] as const;
 const DESCRIPTION = [

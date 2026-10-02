@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { Marker } from "#/shared/ui/marker";
+import { Marker } from "#/shared/ui";
 
 import { TagLines } from "./tag-lines";
 

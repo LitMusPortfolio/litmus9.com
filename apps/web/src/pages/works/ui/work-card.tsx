@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 import type { Work } from "#/pages/works/model/works";
-import { YoutubeThumbnail } from "#/shared/ui/youtube-thumbnail";
+import { YoutubeThumbnail } from "#/shared/ui";
 
 import { WorkInfo } from "./work-info";
 

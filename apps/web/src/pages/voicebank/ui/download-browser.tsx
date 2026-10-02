@@ -2,9 +2,8 @@ import type { ReactNode } from "react";
 
 import type { DownloadFilter } from "#/pages/voicebank/model/download-state";
 import { downloadFilterAtom } from "#/pages/voicebank/model/download-state";
-import { FilterTabs } from "#/shared/ui/filter-tabs";
-import type { FilterTab } from "#/shared/ui/filter-tabs";
-import { SectionTitle } from "#/shared/ui/section-title";
+import type { FilterTab } from "#/shared/ui";
+import { FilterTabs, SectionTitle } from "#/shared/ui";
 
 import { DownloadGrid } from "./download-grid";
 

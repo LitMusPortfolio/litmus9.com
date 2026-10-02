@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { BulletItem } from "#/shared/ui/bullet-item";
+import { BulletItem } from "#/shared/ui";
 
 import { ProtectedEmail } from "./protected-email";
 

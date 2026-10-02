@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { Container } from "#/shared/ui/container";
+import { Container } from "#/shared/ui";
 
 import { DownloadBrowser } from "./download-browser";
 import { DownloadDialog } from "./download-dialog";

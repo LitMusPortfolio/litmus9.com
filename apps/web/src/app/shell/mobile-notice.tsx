@@ -1,7 +1,7 @@
 import { MonitorIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
-import { Lines } from "#/shared/ui/lines";
+import { Lines } from "#/shared/ui";
 
 const TITLE_LINES = ["PCでの閲覧を", "お願いいたします"] as const;
 const MESSAGE_LINES = [

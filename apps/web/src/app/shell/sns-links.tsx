@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { SocialLinks } from "#/shared/ui/social-links";
+import { SocialLinks } from "#/shared/ui";
 
 const SNS_LABEL = "SNS";
 

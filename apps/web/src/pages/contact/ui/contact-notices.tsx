@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { TitledList } from "#/shared/ui/titled-list";
+import { TitledList } from "#/shared/ui";
 
 import { EmailItem } from "./email-item";
 

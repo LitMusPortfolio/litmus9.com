@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { TitleWithLine } from "#/shared/ui/title-with-line";
+import { TitleWithLine } from "#/shared/ui";
 
 import { DemoSong } from "./demo-song";
 

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { BackgroundVideo } from "#/shared/ui/background-video";
+import { BackgroundVideo } from "#/shared/ui";
 
 import { HeroCopy } from "./hero-copy";
 

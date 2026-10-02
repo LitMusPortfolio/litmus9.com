@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { Backdrop } from "#/shared/ui/backdrop";
+import { Backdrop } from "#/shared/ui";
 
 import { CharacterSection } from "./character-section";
 import { DownloadSection } from "./download-section";

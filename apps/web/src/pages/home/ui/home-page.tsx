@@ -1,8 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 
-import { BackgroundVideo } from "#/shared/ui/background-video";
-import { SocialLinks } from "#/shared/ui/social-links";
+import { BackgroundVideo, SocialLinks } from "#/shared/ui";
 
 import { HomeIntro } from "./home-intro";
 

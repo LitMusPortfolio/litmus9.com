@@ -2,10 +2,8 @@ import type { ReactNode } from "react";
 
 import type { WorksFilter } from "#/pages/works/model/filter";
 import { worksFilterAtom } from "#/pages/works/model/filter";
-import { FilterTabs } from "#/shared/ui/filter-tabs";
-import type { FilterTab } from "#/shared/ui/filter-tabs";
-import { PageSection } from "#/shared/ui/page-section";
-import { SectionTitle } from "#/shared/ui/section-title";
+import type { FilterTab } from "#/shared/ui";
+import { FilterTabs, PageSection, SectionTitle } from "#/shared/ui";
 
 import { WorksGrid } from "./works-grid";
 

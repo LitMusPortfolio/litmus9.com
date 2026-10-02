@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 
-import { Container } from "#/shared/ui/container";
-import { SectionTitle } from "#/shared/ui/section-title";
+import { Container, SectionTitle } from "#/shared/ui";
 
 import { RulesList } from "./rules-list";
 

@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 
-import { SectionTitle } from "#/shared/ui/section-title";
-import { TitleWithLine } from "#/shared/ui/title-with-line";
+import { SectionTitle, TitleWithLine } from "#/shared/ui";
 
 import { DemoSongs } from "./demo-songs";
 import { ProfileColumns } from "./profile-columns";
