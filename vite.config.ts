@@ -123,7 +123,7 @@ export default defineConfig({
             {
               from: "package",
               package: "effect",
-              name: ["Cause", "Context", "Effect", "Exit", "Option"],
+              name: ["Cause", "Context", "Effect", "Exit", "Option", "Writable"],
             },
           ],
         },

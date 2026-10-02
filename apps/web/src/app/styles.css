@@ -1,49 +1,26 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.21 0.006 285.885);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.705 0.015 286.067);
-  --radius: 0.625rem;
-}
-
-.dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.92 0.004 286.32);
-  --primary-foreground: oklch(0.21 0.006 285.885);
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: oklch(0 0 0);
+  --foreground: oklch(0.949 0 0);
+  --card: oklch(0 0 0 / 30%);
+  --card-foreground: oklch(0.949 0 0);
+  --popover: oklch(0.187 0.02 285);
+  --popover-foreground: oklch(0.949 0 0);
+  --primary: oklch(0.606 0.25 292.717);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(1 0 0 / 8%);
+  --secondary-foreground: oklch(0.949 0 0);
+  --muted: oklch(1 0 0 / 10%);
+  --muted-foreground: oklch(1 0 0 / 70%);
+  --accent: oklch(0.709 0.159 293.541);
+  --accent-foreground: oklch(0 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
+  --border: oklch(1 0 0 / 20%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.552 0.016 285.938);
+  --ring: oklch(0.606 0.25 292.717);
+  --radius: 0.75rem;
 }
 
 @theme inline {
@@ -70,11 +47,149 @@
   --radius-lg: var(--radius);
 }
 
+@theme {
+  --color-primary-deep: oklch(0.541 0.247 293.009);
+  --color-night: oklch(0.2 0.04 255);
+  --color-indigo-night: oklch(0.2 0.1 290);
+  --font-sans: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  --font-heading: "Noto Sans JP", sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  --text-display: 4rem;
+  --tracking-body: 0.06em;
+  --tracking-heading: 0.07em;
+  --leading-body: 1.8;
+  --spacing-header: 2.5rem;
+  --spacing-marker-top: 0.18em;
+  --spacing-marker-bottom: 0.05em;
+  --spacing-marker: 0.1em;
+  --leading-marker: 0.8;
+  --spacing-side-decoration: 40vw;
+  --spacing-side-decoration-offset: 20vw;
+  --spacing-side-decoration-height: 15vh;
+  --spacing-page-top: 12vw;
+  --spacing-hero-logo: 37vh;
+  --shadow-glow: 0 10px 30px oklch(0.606 0.25 292.717 / 30%);
+  --shadow-glow-lg: 0 20px 40px oklch(0.606 0.25 292.717 / 40%);
+  --shadow-button: 0 10px 30px oklch(0.55 0.25 292 / 50%);
+  --drop-shadow-glow: 0 0 20px oklch(0.606 0.25 292.717 / 50%);
+  --drop-shadow-glow-lg: 0 0 40px oklch(0.606 0.25 292.717 / 60%);
+  --animate-marquee: marquee 20s linear infinite;
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-shimmer: shimmer 3s ease-in-out infinite;
+  --animate-aurora: aurora 20s ease-in-out infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      scale: 0.8;
+    }
+    50% {
+      scale: 0.9;
+    }
+  }
+
+  @keyframes shimmer {
+    from {
+      background-position: -200% center;
+    }
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  @keyframes aurora {
+    0%,
+    100% {
+      rotate: 0deg;
+      scale: 1;
+    }
+    25% {
+      rotate: 90deg;
+      scale: 1.1;
+    }
+    50% {
+      rotate: 180deg;
+      scale: 1;
+    }
+    75% {
+      rotate: 270deg;
+      scale: 1.1;
+    }
+  }
+}
+
+@utility bg-litmus {
+  background-image: url("/LitMusBG.webp");
+}
+
+@utility bg-lit {
+  background-image: url("/LitBG.webp");
+}
+
+@utility bg-aurora {
+  background-image:
+    radial-gradient(circle at 20% 50%, oklch(0.606 0.25 292.717 / 30%) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, oklch(0.88 0.13 195 / 20%) 0%, transparent 30%),
+    radial-gradient(circle at 60% 80%, oklch(0.7 0.25 328 / 20%) 0%, transparent 40%);
+}
+
+@utility marker-name {
+  background: url("/nameBG.webp") center / auto 100% repeat-x;
+}
+
+@utility marker-title {
+  background: url("/titleBG.webp") center / auto 100% repeat-x;
+}
+
+@utility bg-shimmer {
+  background-image: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-deep) 50%,
+    var(--color-primary) 100%
+  );
+  background-size: 200% 100%;
+}
+
+@utility clip-top-half {
+  clip-path: inset(0 0 50% 0);
+}
+
+@utility clip-bottom-half {
+  clip-path: inset(50% 0 0 0);
+}
+
+@utility bullet {
+  &::before {
+    content: "▶";
+    position: relative;
+    top: 0.7em;
+    font-size: 0.7rem;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    @apply scroll-smooth;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background leading-body tracking-body text-foreground font-sans text-lg font-semibold;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-heading tracking-heading leading-snug;
   }
 }

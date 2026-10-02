@@ -10,43 +10,94 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ApiSplatRouteImport } from './routes/api.$'
+import { Route as SiteRouteImport } from './routes/_site'
+import { Route as LitRouteImport } from './routes/lit'
+import { Route as SiteAboutRouteImport } from './routes/_site/about'
+import { Route as SiteContactRouteImport } from './routes/_site/contact'
+import { Route as SiteVoicebankRouteImport } from './routes/_site/voicebank'
+import { Route as SiteWorksRouteImport } from './routes/_site/works'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiSplatRoute = ApiSplatRouteImport.update({
-  id: '/api/$',
-  path: '/api/$',
+const SiteRoute = SiteRouteImport.update({
+  id: '/_site',
   getParentRoute: () => rootRouteImport,
+} as any)
+const LitRoute = LitRouteImport.update({
+  id: '/lit',
+  path: '/lit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SiteAboutRoute = SiteAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => SiteRoute,
+} as any)
+const SiteContactRoute = SiteContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => SiteRoute,
+} as any)
+const SiteVoicebankRoute = SiteVoicebankRouteImport.update({
+  id: '/voicebank',
+  path: '/voicebank',
+  getParentRoute: () => SiteRoute,
+} as any)
+const SiteWorksRoute = SiteWorksRouteImport.update({
+  id: '/works',
+  path: '/works',
+  getParentRoute: () => SiteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/api/$': typeof ApiSplatRoute
+  '/lit': typeof LitRoute
+  '/about': typeof SiteAboutRoute
+  '/contact': typeof SiteContactRoute
+  '/voicebank': typeof SiteVoicebankRoute
+  '/works': typeof SiteWorksRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/api/$': typeof ApiSplatRoute
+  '/lit': typeof LitRoute
+  '/about': typeof SiteAboutRoute
+  '/contact': typeof SiteContactRoute
+  '/voicebank': typeof SiteVoicebankRoute
+  '/works': typeof SiteWorksRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/api/$': typeof ApiSplatRoute
+  '/_site': typeof SiteRouteWithChildren
+  '/lit': typeof LitRoute
+  '/_site/about': typeof SiteAboutRoute
+  '/_site/contact': typeof SiteContactRoute
+  '/_site/voicebank': typeof SiteVoicebankRoute
+  '/_site/works': typeof SiteWorksRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/$'
+  fullPaths: '/' | '/lit' | '/about' | '/contact' | '/voicebank' | '/works'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/$'
-  id: '__root__' | '/' | '/api/$'
+  to: '/' | '/lit' | '/about' | '/contact' | '/voicebank' | '/works'
+  id:
+    | '__root__'
+    | '/'
+    | '/_site'
+    | '/lit'
+    | '/_site/about'
+    | '/_site/contact'
+    | '/_site/voicebank'
+    | '/_site/works'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ApiSplatRoute: typeof ApiSplatRoute
+  SiteRoute: typeof SiteRouteWithChildren
+  LitRoute: typeof LitRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,19 +109,71 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/$': {
-      id: '/api/$'
-      path: '/api/$'
-      fullPath: '/api/$'
-      preLoaderRoute: typeof ApiSplatRouteImport
+    '/_site': {
+      id: '/_site'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof SiteRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/lit': {
+      id: '/lit'
+      path: '/lit'
+      fullPath: '/lit'
+      preLoaderRoute: typeof LitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_site/about': {
+      id: '/_site/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof SiteAboutRouteImport
+      parentRoute: typeof SiteRoute
+    }
+    '/_site/contact': {
+      id: '/_site/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof SiteContactRouteImport
+      parentRoute: typeof SiteRoute
+    }
+    '/_site/voicebank': {
+      id: '/_site/voicebank'
+      path: '/voicebank'
+      fullPath: '/voicebank'
+      preLoaderRoute: typeof SiteVoicebankRouteImport
+      parentRoute: typeof SiteRoute
+    }
+    '/_site/works': {
+      id: '/_site/works'
+      path: '/works'
+      fullPath: '/works'
+      preLoaderRoute: typeof SiteWorksRouteImport
+      parentRoute: typeof SiteRoute
     }
   }
 }
 
+interface SiteRouteChildren {
+  SiteAboutRoute: typeof SiteAboutRoute
+  SiteContactRoute: typeof SiteContactRoute
+  SiteVoicebankRoute: typeof SiteVoicebankRoute
+  SiteWorksRoute: typeof SiteWorksRoute
+}
+
+const SiteRouteChildren: SiteRouteChildren = {
+  SiteAboutRoute: SiteAboutRoute,
+  SiteContactRoute: SiteContactRoute,
+  SiteVoicebankRoute: SiteVoicebankRoute,
+  SiteWorksRoute: SiteWorksRoute,
+}
+
+const SiteRouteWithChildren = SiteRoute._addFileChildren(SiteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ApiSplatRoute: ApiSplatRoute,
+  SiteRoute: SiteRouteWithChildren,
+  LitRoute: LitRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

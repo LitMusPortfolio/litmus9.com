@@ -24,3 +24,23 @@ ESLintで動かしている限り、このpatchも必要である。
 oxlintのJSプラグインにTypeScriptのProgramが渡るようになるか、TanStackがoxlintに対応した版を出せば外せる。
 oxlintやプラグインを更新したときは、プラグインをoxlintのjsPluginsに載せて違反を仕込み、検出されるかを確かめる。
 検出できれば、ESLint本体と設定ファイル、関連する依存、verifyのESLintの段を取り除く。
+
+## テンプレートから外したもの
+
+テンプレートにある認証、データベース、API、機能フラグ、サーバー状態の仕組みは持たない。
+このサイトは静的な掲載物だけで成り立ち、ログインや保存するデータを持たない。
+使わない依存と未参照のカタログ項目はfallowが落とすため、better-auth、Drizzle、D1、ElysiaJS、Eden、OpenFeature、TanStack Queryを依存から外した。
+データベースがないので、verifyからdb:checkの段も外した。
+データベースやAPIが必要になったら、テンプレートの構成に戻して足す。
+
+## YouTubeを埋め込まない理由
+
+YouTubeの埋め込みプレーヤーは、iframeのsandboxにallow-scriptsとallow-same-originの両方を要る。
+この組み合わせは@eslint-react/dom-no-unsafe-iframe-sandboxが危険として落とす。sandboxを外すとreact/iframe-missing-sandboxが落とす。
+そこでデモソングはWorksと同じく、サムネイル画像からYouTubeへリンクする。
+
+## 旧URLの転送
+
+旧サイトはHashRouterで、URLは /#/voicebank の形だった。
+ハッシュはサーバーに届かず、TanStack Routerはハイドレーションの際にbeforeLoadを走らせない。
+そこでトップページのheadに、ハッシュを見てページを移すスクリプトを置いている。

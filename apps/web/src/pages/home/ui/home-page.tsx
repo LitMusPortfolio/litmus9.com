@@ -1,25 +1,28 @@
-import { useSuspenseQuery } from "@tanstack/react-query";
+import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 
-import { todoSummaryQuery } from "#/pages/home/api/summary";
+import { BackgroundVideo } from "#/shared/ui/background-video";
+import { SocialLinks } from "#/shared/ui/social-links";
 
-import { SessionBadge } from "./session-badge";
-import { TodoList } from "./todo-list";
+import { HomeIntro } from "./home-intro";
 
-const TITLE = "Todos";
+const NEWS = "××× 2025/06/06 VOICEVOX離途 がリリース！ ×××";
+const BANNER_ALT = "VOICEVOX 離途 無料でダウンロード";
 
-const HomePage = (): ReactNode => {
-  const { data: summary } = useSuspenseQuery(todoSummaryQuery);
-  return (
-    <main className="mx-auto flex max-w-xl flex-col gap-6 p-8">
-      <header className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold">{TITLE}</h1>
-        <SessionBadge />
-      </header>
-      {summary}
-      <TodoList />
-    </main>
-  );
-};
+const HomePage = (): ReactNode => (
+  <section className="fixed inset-0 isolate h-screen overflow-hidden">
+    <BackgroundVideo src="/001_top/LitMusHPTopMovie" tone="full" />
+    <HomeIntro />
+    <Link to="/voicebank" className="absolute top-24 right-12 backdrop-blur-md">
+      <img src="/001_top/離途バナー.webp" alt={BANNER_ALT} />
+    </Link>
+    <div className="absolute right-12 bottom-32">
+      <SocialLinks size="lg" />
+    </div>
+    <div className="bg-background/30 absolute inset-x-0 bottom-0 flex overflow-hidden px-12 py-4 backdrop-blur-md">
+      <p className="animate-marquee whitespace-nowrap">{NEWS}</p>
+    </div>
+  </section>
+);
 
 export { HomePage };
