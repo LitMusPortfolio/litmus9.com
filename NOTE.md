@@ -44,3 +44,15 @@ YouTubeの埋め込みプレーヤーは、iframeのsandboxにallow-scriptsとal
 旧サイトはHashRouterで、URLは /#/voicebank の形だった。
 ハッシュはサーバーに届かず、TanStack Routerはハイドレーションの際にbeforeLoadを走らせない。
 そこでトップページのheadに、ハッシュを見てページを移すスクリプトを置いている。
+
+## 旧サイトの .claude/rules を消した理由
+
+旧サイトは .claude/rules/ に5つの手書きガイドを置いていた。CLAUDE.mdは手書きの文章をルートの4文書とdocs/に限り、ガイドに書くだけで済ませず検査で強制すると定めている。そこでガイドは消し、中身を次のように移した。
+
+- テーマ値だけで装飾する規則は、DESIGN.mdと@shadcn/lintのno-raw-colors・no-arbitrary-valuesが受け持つ
+- 1ファイル1コンポーネントの規則は、react/no-multi-compが受け持つ
+- アセットは apps/web/public に移し、番号付きのディレクトリ構成とWebP・WebMの使用を保った
+- 遅延読み込みはLazyImageとLazyVideoをやめ、img要素のloading属性に任せた
+- Storybookはテンプレートがテストを持たないため外した。wrapAlphanumericは使う箇所がなくなった
+
+型をtypeで定義しinterfaceを使わない規則は、コードでは守っている。typescript/consistent-type-definitionsで強制しようとしたが、TanStack RouterのRegisterはinterfaceの宣言マージでしか書けず、例外を設けない限り有効にできないため見送った。
