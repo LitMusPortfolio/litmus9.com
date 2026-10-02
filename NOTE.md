@@ -56,3 +56,14 @@ YouTubeの埋め込みプレーヤーは、iframeのsandboxにallow-scriptsとal
 - Storybookはテンプレートがテストを持たないため外した。wrapAlphanumericは使う箇所がなくなった
 
 型をtypeで定義しinterfaceを使わない規則は、コードでは守っている。typescript/consistent-type-definitionsで強制しようとしたが、TanStack RouterのRegisterはinterfaceの宣言マージでしか書けず、例外を設けない限り有効にできないため見送った。
+
+## 旧サイトの検査ツールの置き換え先
+
+旧サイトの検査ツールは、テンプレートにある同等以上の検査へ置き換えた。CLAUDE.mdはlint・fmt・checkをVite+のルート設定ひとつにまとめると定めているため、旧ツールと併用しない。
+
+- Biomeのlintとformatは、oxlintとoxfmtに置き換えた。oxlintは全カテゴリをerrorにしており、未使用のimportや変数もここで落ちる。未使用の引数と変数はtsconfigのnoUnusedLocalsとnoUnusedParametersでも落ちる
+- lefthookは、Vite+のgitフックに置き換えた。pre-commitでvp staged、pre-pushでvp run verifyを走らせる
+- knipは、fallowの未使用ファイル・export・依存の検査に置き換えた
+- tsconfig.node.jsonは、ルートとapps/webのtsconfigが設定ファイルの *.ts を含むので不要になった。tsconfig.stories.jsonはStorybookとともに外した
+- import用の別名 @/ は、apps/webのpackage.jsonのimportsとtsconfigのpathsで定義する #/ に置き換えた
+- 個別の検査は、vp check、pnpm --filter web typecheck、vp run -r fallow などで単独でも走らせられる
