@@ -5,8 +5,8 @@
   "platformAutomerge": false,
   "packageRules": [
     {
-      "matchPackageNames": ["effect", "@effect/**", "!@effect/tsgo", "alchemy", "@alchemy.run/**"],
-      "groupName": "effect and alchemy",
+      "matchPackageNames": ["effect", "@effect/**", "!@effect/tsgo"],
+      "groupName": "effect",
       "automerge": false
     }
   ]

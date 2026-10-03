@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SiteRouteImport } from './routes/_site'
-import { Route as LitRouteImport } from './routes/lit'
 import { Route as SiteAboutRouteImport } from './routes/_site/about'
 import { Route as SiteContactRouteImport } from './routes/_site/contact'
 import { Route as SiteVoicebankRouteImport } from './routes/_site/voicebank'
@@ -24,11 +23,6 @@ const IndexRoute = IndexRouteImport.update({
 } as any)
 const SiteRoute = SiteRouteImport.update({
   id: '/_site',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LitRoute = LitRouteImport.update({
-  id: '/lit',
-  path: '/lit',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SiteAboutRoute = SiteAboutRouteImport.update({
@@ -54,7 +48,6 @@ const SiteWorksRoute = SiteWorksRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/lit': typeof LitRoute
   '/about': typeof SiteAboutRoute
   '/contact': typeof SiteContactRoute
   '/voicebank': typeof SiteVoicebankRoute
@@ -62,7 +55,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/lit': typeof LitRoute
   '/about': typeof SiteAboutRoute
   '/contact': typeof SiteContactRoute
   '/voicebank': typeof SiteVoicebankRoute
@@ -72,7 +64,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_site': typeof SiteRouteWithChildren
-  '/lit': typeof LitRoute
   '/_site/about': typeof SiteAboutRoute
   '/_site/contact': typeof SiteContactRoute
   '/_site/voicebank': typeof SiteVoicebankRoute
@@ -80,14 +71,13 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/lit' | '/about' | '/contact' | '/voicebank' | '/works'
+  fullPaths: '/' | '/about' | '/contact' | '/voicebank' | '/works'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/lit' | '/about' | '/contact' | '/voicebank' | '/works'
+  to: '/' | '/about' | '/contact' | '/voicebank' | '/works'
   id:
     | '__root__'
     | '/'
     | '/_site'
-    | '/lit'
     | '/_site/about'
     | '/_site/contact'
     | '/_site/voicebank'
@@ -97,7 +87,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SiteRoute: typeof SiteRouteWithChildren
-  LitRoute: typeof LitRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -114,13 +103,6 @@ declare module '@tanstack/react-router' {
       path: ''
       fullPath: '/'
       preLoaderRoute: typeof SiteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/lit': {
-      id: '/lit'
-      path: '/lit'
-      fullPath: '/lit'
-      preLoaderRoute: typeof LitRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_site/about': {
@@ -173,7 +155,6 @@ const SiteRouteWithChildren = SiteRoute._addFileChildren(SiteRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SiteRoute: SiteRouteWithChildren,
-  LitRoute: LitRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
