@@ -11,7 +11,7 @@ const DownloadLinks = ({ links }: Readonly<{ links: DownloadItem["links"] }>): R
         href={link.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="animate-shimmer bg-shimmer hover:shadow-glow-lg flex items-center justify-center gap-4 rounded-full px-10 py-5 transition hover:-translate-y-1 active:translate-y-0"
+        className="motion-safe:animate-shimmer bg-shimmer hover:shadow-glow-lg flex items-center justify-center gap-4 rounded-full px-10 py-5 transition hover:-translate-y-1 active:translate-y-0"
       >
         <DownloadIcon aria-hidden="true" className="size-6" />
         {link.text}

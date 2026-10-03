@@ -14,7 +14,10 @@ const BackgroundVideo = ({ src, tone }: Readonly<{ src: string; tone: VideoTone 
     autoPlay
     loop
     muted
-    className={cn("absolute inset-0 -z-30 size-full object-cover", toneClass[tone])}
+    className={cn(
+      "absolute inset-0 -z-30 size-full object-cover motion-reduce:hidden",
+      toneClass[tone],
+    )}
   >
     <source src={`${src}.webm`} type="video/webm" />
     <source src={`${src}.mp4`} type="video/mp4" />

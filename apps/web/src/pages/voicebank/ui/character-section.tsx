@@ -12,6 +12,8 @@ const CharacterSection = (): ReactNode => (
       <img
         src="/201_Lit立ち絵/LitB.webp"
         alt={CHARACTER_ALT}
+        width="900"
+        height="1056"
         loading="lazy"
         className="drop-shadow-glow-lg h-full w-auto object-contain object-left-bottom"
       />

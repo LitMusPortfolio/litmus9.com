@@ -4,7 +4,7 @@ const PAGE_TOP_LABEL = "ページの一番上に移動";
 
 const PageTopLink = (): ReactNode => (
   <a href="#top" aria-label={PAGE_TOP_LABEL} className="w-page-top">
-    <img src="/001_top/FooterPageTop.svg" alt="" className="w-full" />
+    <img src="/001_top/FooterPageTop.svg" alt="" width="623" height="107" className="w-full" />
   </a>
 );
 

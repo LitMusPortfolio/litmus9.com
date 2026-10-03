@@ -13,13 +13,13 @@ const HomePage = (): ReactNode => (
     <BackgroundVideo src="/001_top/LitMusHPTopMovie" tone="full" />
     <HomeIntro />
     <Link to="/voicebank" className="absolute top-24 right-12 backdrop-blur-md">
-      <img src="/001_top/離途バナー.webp" alt={BANNER_ALT} />
+      <img src="/001_top/離途バナー.webp" alt={BANNER_ALT} width="376" height="109" />
     </Link>
     <div className="absolute right-12 bottom-32">
       <SocialLinks size="lg" />
     </div>
     <div className="bg-background/30 absolute inset-x-0 bottom-0 flex overflow-hidden px-12 py-4 backdrop-blur-md">
-      <p className="animate-marquee whitespace-nowrap">{NEWS}</p>
+      <p className="motion-safe:animate-marquee whitespace-nowrap">{NEWS}</p>
     </div>
   </section>
 );

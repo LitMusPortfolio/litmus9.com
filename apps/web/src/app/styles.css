@@ -183,7 +183,7 @@
     @apply border-border outline-ring/50;
   }
   html {
-    @apply scroll-smooth;
+    @apply motion-safe:scroll-smooth;
   }
   body {
     @apply bg-background leading-body tracking-body text-foreground font-sans text-lg font-semibold;
