@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
 :root {
   --background: oklch(0 0 0);

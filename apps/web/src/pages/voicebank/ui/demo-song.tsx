@@ -1,16 +1,10 @@
 import type { ReactNode } from "react";
+import LiteYouTubeEmbed from "react-lite-youtube-embed";
 
-import { YoutubeThumbnail } from "#/shared/ui";
-
-const DemoSong = ({ title, link }: Readonly<{ title: string; link: string }>): ReactNode => (
-  <a
-    href={link}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="bg-muted hover:shadow-glow relative block aspect-video overflow-hidden rounded-lg transition"
-  >
-    <YoutubeThumbnail link={link} title={title} />
-  </a>
+const DemoSong = ({ title, embedId }: Readonly<{ title: string; embedId: string }>): ReactNode => (
+  <div className="bg-muted overflow-hidden rounded-lg">
+    <LiteYouTubeEmbed id={embedId} title={title} />
+  </div>
 );
 
 export { DemoSong };

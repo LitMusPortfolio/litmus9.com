@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 
 import type { Work } from "#/pages/works/model/works";
-import { YoutubeThumbnail } from "#/shared/ui";
 
 import { WorkInfo } from "./work-info";
+import { YoutubeThumbnail } from "./youtube-thumbnail";
 
 const WorkCard = ({ work }: Readonly<{ work: Work }>): ReactNode => (
   <article className="border-primary/30 bg-card hover:shadow-glow relative flex h-full flex-col overflow-hidden rounded-xl border backdrop-blur-md transition hover:-translate-y-1">

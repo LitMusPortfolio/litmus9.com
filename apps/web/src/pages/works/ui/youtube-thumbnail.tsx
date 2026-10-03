@@ -2,7 +2,7 @@ import { Option } from "effect";
 import { PlayIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
-import { youtubeThumbnailOf } from "#/shared/lib";
+import { youtubeThumbnailOf } from "#/pages/works/lib/youtube";
 
 const YoutubeThumbnail = ({ link, title }: Readonly<{ link: string; title: string }>): ReactNode =>
   Option.match(youtubeThumbnailOf(link), {

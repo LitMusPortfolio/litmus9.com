@@ -13,4 +13,3 @@ export { SectionTitle } from "./section-title";
 export { SocialLinks } from "./social-links";
 export { TitleWithLine } from "./title-with-line";
 export { TitledList } from "./titled-list";
-export { YoutubeThumbnail } from "./youtube-thumbnail";
