@@ -12,14 +12,12 @@ const WorksGrid = (): ReactNode => {
   const filter = useAtomValue(worksFilterAtom);
   const works = route.useLoaderData();
   return (
-    <div className="p-2">
-      <div className="card-grid">
-        {works
-          .filter((work) => filter === "all" || work.categories.includes(filter))
-          .map((work) => (
-            <WorkCard key={`${work.title}-${work.link}`} work={work} />
-          ))}
-      </div>
+    <div className="card-grid p-2">
+      {works
+        .filter((work) => filter === "all" || work.categories.includes(filter))
+        .map((work) => (
+          <WorkCard key={`${work.title}-${work.link}`} work={work} />
+        ))}
     </div>
   );
 };
