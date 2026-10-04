@@ -9,7 +9,7 @@ const FIGURES: Readonly<Record<CharacterMode["status"], Readonly<{ src: string; 
 };
 
 const CharacterFigure = ({ status }: Readonly<{ status: CharacterMode["status"] }>): ReactNode => (
-  <div className="h-character-figure absolute bottom-0 left-0 z-1 w-auto">
+  <div className="h-character-figure absolute bottom-0 left-0 z-1 w-auto max-xl:opacity-40">
     <FramedImage
       key={status}
       src={FIGURES[status].src}

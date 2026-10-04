@@ -9,16 +9,16 @@ import { NewsTicker } from "./news-ticker";
 const BANNER_ALT = "VOICEVOX";
 
 const HomePage = (): ReactNode => (
-  <section className="fixed top-0 left-0 h-screen min-h-screen w-full overflow-hidden bg-cover bg-fixed bg-center p-0">
+  <section className="fixed top-0 left-0 h-dvh w-full overflow-hidden bg-cover bg-fixed bg-center p-0">
     <BackgroundVideo src="/001_top/LitMusHPTopMovie" tone="shade" />
     <HomeIntro />
     <Link
       to="/voicebank"
-      className="backdrop-blur-glass motion-safe:animate-breathe breathe-hover absolute top-24 right-12 origin-top-right"
+      className="backdrop-blur-glass motion-safe:animate-breathe breathe-hover mobile:right-4 mobile:left-4 absolute top-24 right-12 origin-top-right"
     >
       <FramedImage src="/001_top/離途バナー.webp" alt={BANNER_ALT} />
     </Link>
-    <div className="absolute right-12 bottom-32 z-10">
+    <div className="mobile:right-auto mobile:bottom-20 mobile:left-4 absolute right-12 bottom-32 z-10">
       <SocialLinks size="lg" />
     </div>
     <NewsTicker />

@@ -29,7 +29,7 @@ const DecorationHalf = ({
       src={src}
       alt=""
       className={cn(
-        "absolute top-1/2 left-1/2 h-full w-auto -translate-1/2 opacity-80",
+        "absolute top-1/2 left-1/2 h-full w-auto -translate-1/2 opacity-80 mobile:opacity-30",
         clipClass[side],
       )}
     />

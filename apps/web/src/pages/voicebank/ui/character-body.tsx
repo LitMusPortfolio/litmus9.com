@@ -19,7 +19,7 @@ const CharacterBody = (): ReactNode => {
   const Content = CONTENT[mode.status];
   return (
     <>
-      <div className="w-spacer tablet:hidden shrink-0 transition-all duration-300" />
+      <div className="w-spacer shrink-0 transition-all duration-300 max-xl:hidden" />
       <div className="flex flex-1 flex-col justify-end">
         <SectionTitle tone="title">{TITLE}</SectionTitle>
         <Content />

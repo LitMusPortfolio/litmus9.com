@@ -13,7 +13,7 @@ const focusFirstLink: OpenAutoFocusHandler = (event) => {
   if (event.currentTarget instanceof HTMLElement) {
     const link = event.currentTarget.querySelector("a");
     if (link instanceof HTMLElement) {
-      link.focus();
+      link.focus({ preventScroll: true });
     }
   }
 };
@@ -21,7 +21,7 @@ const focusFirstLink: OpenAutoFocusHandler = (event) => {
 const DownloadPanel = ({ item }: Readonly<{ item: DownloadItem }>): ReactNode => (
   <Dialog.Content
     onOpenAutoFocus={focusFirstLink}
-    className="grid-cols-modal h-modal-h w-modal-w rounded-card border-modal-border bg-modal shadow-modal fixed top-1/2 left-1/2 z-10000 grid -translate-1/2 overflow-hidden border border-solid p-8 outline-none"
+    className="grid-cols-modal min-h-modal-h w-modal-w rounded-card border-modal-border bg-modal shadow-modal max-xl:grid-cols-single fixed top-1/2 left-1/2 z-10000 grid max-h-5/6 -translate-1/2 overflow-y-auto border border-solid p-8 outline-none max-xl:min-h-0 max-xl:w-11/12 max-xl:max-w-xl max-xl:p-4"
   >
     <DownloadImage item={item} />
     <DownloadBody item={item} />

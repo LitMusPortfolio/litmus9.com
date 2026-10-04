@@ -19,6 +19,8 @@ body {
   background: #000;
   overflow-x: hidden;
   font-size: var(--text-body);
+  word-break: auto-phrase;
+  overflow-wrap: anywhere;
 }
 
 main {
@@ -49,6 +51,24 @@ h2 {
 
 h3 {
   font-size: var(--text-h3);
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: var(--text-md);
+  }
+
+  h1 {
+    font-size: var(--text-h2);
+  }
+
+  h2 {
+    font-size: var(--text-h3);
+  }
+
+  h3 {
+    font-size: var(--text-body);
+  }
 }
 
 p,

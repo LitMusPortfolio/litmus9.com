@@ -34,7 +34,7 @@ const FilterTabs = <Value extends string>({
     <Tabs.Root value={value} onValueChange={change}>
       <Tabs.List
         aria-label={label}
-        className="tab-rule relative mb-8 flex items-center justify-start gap-4"
+        className="tab-rule tablet:flex-wrap tablet:gap-2 tablet:after:hidden relative mb-8 flex items-center justify-start gap-4"
       >
         {tabs.map((tab) => (
           <Tabs.Trigger

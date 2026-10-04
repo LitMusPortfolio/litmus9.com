@@ -16,7 +16,7 @@ const SONGS = [
 const DemoSongs = (): ReactNode => (
   <div className="mt-8 w-full">
     <TitleWithLine title={TITLE} />
-    <div className="grid-cols-pair tablet:grid-cols-single grid gap-8">
+    <div className="grid-cols-pair max-xl:grid-cols-single grid gap-8">
       {SONGS.map((song) => (
         <DemoSong key={song.embedId} title={song.title} embedId={song.embedId} />
       ))}

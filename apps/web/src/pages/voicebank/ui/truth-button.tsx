@@ -33,7 +33,7 @@ const TruthButton = (): ReactNode => {
       aria-pressed={mode.status === "corrupted"}
       aria-label={LABEL}
       className={cn(
-        "diamond text-caption font-montserrat tracking-latin hover:bg-violet-from hover:text-lit-pink motion-safe:animate-breathe breathe-hover absolute top-1/3 left-1/4 z-5 size-48 cursor-pointer border-none uppercase",
+        "diamond text-caption font-montserrat tracking-latin hover:bg-violet-from hover:text-lit-pink motion-safe:animate-breathe breathe-hover absolute top-1/3 left-1/4 z-5 size-48 cursor-pointer border-none uppercase max-xl:static max-xl:order-last max-xl:mt-8",
         TONES[mode.status],
       )}
     >
