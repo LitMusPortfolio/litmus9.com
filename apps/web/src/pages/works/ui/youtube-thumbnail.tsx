@@ -14,7 +14,7 @@ const YoutubeThumbnail = ({ link, title }: Readonly<{ link: string; title: strin
           src={src}
           alt={title}
           loading="lazy"
-          className="absolute top-0 left-0 size-full object-cover"
+          className="absolute top-0 left-0 size-full object-cover text-transparent"
         />
         <PlayOverlay />
       </>

@@ -19,6 +19,8 @@ body {
   background: #000;
   overflow-x: hidden;
   font-size: var(--text-body);
+  word-break: auto-phrase;
+  overflow-wrap: anywhere;
 }
 
 main {

@@ -16,14 +16,17 @@ const variantClass: Readonly<
   plain: { frame: "relative overflow-hidden", image: "" },
   portrait: { frame: "relative overflow-hidden", image: "block h-auto w-portrait" },
   figure: {
-    frame: "relative h-full w-auto overflow-hidden",
-    image: "h-full w-auto object-contain drop-shadow-glow",
+    frame: "relative h-full w-auto overflow-hidden max-xl:h-auto max-xl:w-full",
+    image: "h-full w-auto object-contain drop-shadow-glow max-xl:h-auto max-xl:w-full",
   },
   "anchored-figure": {
     frame: "relative h-full w-auto overflow-hidden",
     image: "h-full w-auto object-contain object-left-bottom drop-shadow-glow-lg",
   },
-  logo: { frame: "relative mb-8 max-h-hero-logo w-auto overflow-hidden", image: "h-full w-auto" },
+  logo: {
+    frame: "relative mb-8 max-h-hero-logo w-auto overflow-hidden",
+    image: "h-full w-auto max-xl:h-auto max-xl:max-h-48",
+  },
   cover: { frame: "relative overflow-hidden", image: "size-full object-cover" },
   fill: {
     frame: "absolute top-0 left-0 size-full overflow-hidden",

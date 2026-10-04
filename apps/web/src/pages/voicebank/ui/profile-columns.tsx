@@ -19,7 +19,7 @@ const PROFILE_RIGHT: readonly ProfileEntry[] = [
 ];
 
 const ProfileColumns = (): ReactNode => (
-  <div className="grid-cols-profile tablet:grid-cols-single grid w-full gap-12">
+  <div className="grid-cols-profile max-xl:grid-cols-single grid w-full gap-12">
     <ProfileList entries={PROFILE_LEFT} />
     <ProfileList entries={PROFILE_RIGHT} />
   </div>

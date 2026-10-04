@@ -194,7 +194,7 @@
 }
 
 @utility grid-cols-modal {
-  grid-template-columns: 0.4fr 0.6fr;
+  grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
 }
 
 @utility card-grid {
@@ -203,12 +203,15 @@
   gap: 1rem;
   grid-auto-rows: 1fr;
 
-  @media (max-width: 968px) {
+  @media (max-width: 1200px) {
     grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 968px) {
     grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+  }
+
+  @media (max-width: 768px) {
     gap: 0.75rem;
   }
 }
