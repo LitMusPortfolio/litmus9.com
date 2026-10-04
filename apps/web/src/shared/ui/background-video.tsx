@@ -1,4 +1,5 @@
-import type { ReactNode } from "react";
+import { Effect } from "effect";
+import type { ReactNode, RefCallback } from "react";
 
 import { cn } from "#/shared/lib";
 
@@ -10,6 +11,15 @@ const toneClass: Readonly<Record<VideoTone, string>> = {
   dim: "opacity-50",
 };
 
+const startInlinePlayback: RefCallback<HTMLVideoElement> = (video) => {
+  if (video === null) {
+    return;
+  }
+  video.muted = true;
+  video.setAttribute("playsinline", "");
+  Effect.runFork(Effect.ignore(Effect.tryPromise(() => video.play())));
+};
+
 const BackgroundVideo = ({ src, tone }: Readonly<{ src: string; tone: VideoTone }>): ReactNode => (
   <div
     className={cn(
@@ -18,15 +28,16 @@ const BackgroundVideo = ({ src, tone }: Readonly<{ src: string; tone: VideoTone 
     )}
   >
     <video
+      ref={startInlinePlayback}
       autoPlay
       loop
       muted
       preload="metadata"
       poster={`${src}.webp`}
-      className="size-full object-cover"
+      className="pointer-events-none size-full object-cover"
     >
-      <source src={`${src}.webm`} type="video/webm" />
       <source src={`${src}.mp4`} type="video/mp4" />
+      <source src={`${src}.webm`} type="video/webm" />
     </video>
   </div>
 );
