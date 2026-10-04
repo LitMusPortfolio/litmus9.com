@@ -83,8 +83,10 @@
   --spacing-double: 200%;
   --spacing-desc: 0.9rem;
   --spacing-tablet-copy: 90%;
-  --spacing-hero-figure: min(calc(45vw + 300px), 100svh);
-  --spacing-hero-figure-x: calc(72% - 0.36 * var(--spacing-hero-figure));
+  --spacing-hero-figure-h: calc(100svh - 4rem);
+  --spacing-hero-figure: calc(var(--spacing-hero-figure-h) * 1.044);
+  --spacing-hero-figure-x: calc(75vw - 0.36 * var(--spacing-hero-figure));
+  --spacing-hero-copy: 55svh;
   --spacing-modal-gap: 1.2rem;
   --spacing-lift: 3px;
   --spacing-press: 1px;
@@ -220,6 +222,20 @@
 
   @media (max-width: 540px) {
     grid-template-columns: 1fr;
+  }
+}
+
+@utility hero-figure-fade {
+  @supports (animation-timeline: scroll()) {
+    animation: hero-figure-fade linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 50svh;
+  }
+}
+
+@keyframes hero-figure-fade {
+  to {
+    opacity: 0.35;
   }
 }
 

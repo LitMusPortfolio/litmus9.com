@@ -10,7 +10,7 @@ import { RulesSection } from "./rules-section";
 const VoicebankPage = (): ReactNode => (
   <section
     id="voicebank"
-    className="relative min-h-screen overflow-hidden bg-cover bg-fixed bg-center p-0"
+    className="relative min-h-screen overflow-clip bg-cover bg-fixed bg-center p-0"
   >
     <HeroSection />
     <section className="relative min-h-screen bg-cover bg-fixed bg-center py-16">
