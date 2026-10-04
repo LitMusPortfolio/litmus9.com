@@ -1,0 +1,41 @@
+content:
+  - name: works
+    label: Works
+    type: file
+    path: apps/web/src/pages/works/model/works.json
+    format: json
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{fields.title}"
+    fields:
+      - name: title
+        label: タイトル
+        type: string
+        required: true
+      - name: categories
+        label: カテゴリ
+        type: select
+        options:
+          multiple: true
+          values:
+            - name: music
+              label: MUSIC
+            - name: illustration
+              label: ILLUST
+            - name: movie
+              label: MOVIE
+            - name: direction
+              label: DIRECTION
+            - name: other
+              label: OTHER
+      - name: description
+        label: 担当
+        type: string
+      - name: requester
+        label: 依頼主
+        type: string
+      - name: link
+        label: YouTube のリンク
+        type: string
+        required: true

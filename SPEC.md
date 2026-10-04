@@ -21,6 +21,7 @@ masseater/typescript-templateから作った。
 アプリはTanStack Startで組む。
 UI状態はeffect-atom、UIはshadcn/uiとTailwind CSS、構成はFeature-Sliced Designに従う。
 掲載データの検証にはEffectのSchemaを使う。
+Worksの掲載データはPages CMSで編集する。CMSが保存したJSONは、mainへのpushを受けてGitHub Actionsが整形する。
 GitHub Pagesで配信する。TanStack Startのプリレンダーで静的なHTMLを書き出し、mainへのpushでGitHub Actionsがデプロイする。
 検査にはoxlint、oxfmt、fallow、steiger、textlint、yomiyasuを使う。
 依存の更新はRenovateで行い、CIが通ったものだけを自動でマージする。
