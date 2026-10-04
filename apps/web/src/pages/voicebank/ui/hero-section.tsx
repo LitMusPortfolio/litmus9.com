@@ -15,7 +15,7 @@ const HeroSection = (): ReactNode => (
   >
     <div className="size-double bg-aurora motion-safe:animate-aurora absolute -top-1/2 -left-1/2 z-0" />
     <BackgroundVideo src="/101_Lit/LitTopMovie" tone="dim" />
-    <div className="tablet:items-center tablet:px-8 mobile:px-4 mobile:pb-24 relative z-2 flex h-screen w-full flex-col items-start justify-center">
+    <div className="tablet:items-center tablet:px-8 mobile:px-4 tablet:pb-24 relative z-2 flex h-screen w-full flex-col items-start justify-center">
       <FramedImage src="/101_Lit/Litlogo.webp" alt={LOGO_ALT} variant="logo" />
       <HeroCopy />
     </div>

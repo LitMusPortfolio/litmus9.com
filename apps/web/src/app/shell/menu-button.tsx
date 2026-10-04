@@ -9,7 +9,7 @@ const MenuButton = (): ReactNode => (
     <button
       type="button"
       aria-label={OPEN_LABEL}
-      className="mobile:flex hidden size-10 cursor-pointer flex-col items-center justify-center gap-1.5 border-none bg-transparent p-0"
+      className="tablet:flex hidden size-10 cursor-pointer flex-col items-center justify-center gap-1.5 border-none bg-transparent p-0"
     >
       {BARS.map((bar) => (
         <span key={bar} aria-hidden="true" className="bg-foreground block h-0.5 w-6" />

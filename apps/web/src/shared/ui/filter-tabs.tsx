@@ -34,13 +34,13 @@ const FilterTabs = <Value extends string>({
     <Tabs.Root value={value} onValueChange={change}>
       <Tabs.List
         aria-label={label}
-        className="tab-rule mobile:flex-wrap mobile:gap-x-2 mobile:gap-y-1 mobile:after:hidden relative mb-8 flex items-center justify-start gap-8"
+        className="tab-rule tablet:flex-wrap tablet:gap-x-2 tablet:gap-y-1 tablet:after:hidden relative mb-8 flex items-center justify-start gap-8"
       >
         {tabs.map((tab) => (
           <Tabs.Trigger
             key={tab.value}
             value={tab.value}
-            className="tab-underline hover:text-primary focus-visible:outline-primary mobile:px-3 mobile:py-2 relative cursor-pointer border-none bg-transparent px-6 py-4 whitespace-nowrap transition-colors duration-300 ease-in-out focus-visible:outline-2 focus-visible:outline-offset-2"
+            className="tab-underline hover:text-primary focus-visible:outline-primary tablet:px-3 tablet:py-2 relative cursor-pointer border-none bg-transparent px-6 py-4 whitespace-nowrap transition-colors duration-300 ease-in-out focus-visible:outline-2 focus-visible:outline-offset-2"
           >
             {tab.label}
           </Tabs.Trigger>
