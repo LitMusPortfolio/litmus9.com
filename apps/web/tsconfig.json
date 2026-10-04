@@ -3,7 +3,7 @@
   "extends": "../../tsconfig.base.json",
   "include": ["src", "*.ts"],
   "compilerOptions": {
-    "types": ["vite/client"],
+    "types": ["vite/client", "vite-plugin-svgr/client"],
     "paths": {
       "#/*": ["./src/*"]
     },
