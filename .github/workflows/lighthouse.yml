@@ -6,6 +6,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
@@ -24,3 +27,5 @@ jobs:
         with:
           name: lighthouse
           path: apps/web/.lighthouseci
+          include-hidden-files: true
+          if-no-files-found: error
