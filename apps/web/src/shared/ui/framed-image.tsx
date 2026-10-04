@@ -1,20 +1,12 @@
 import type { ReactNode } from "react";
 
 type ImageLoading = "eager" | "lazy";
-type FramedImageVariant =
-  | "plain"
-  | "portrait"
-  | "figure"
-  | "anchored-figure"
-  | "logo"
-  | "cover"
-  | "fill";
+type FramedImageVariant = "plain" | "figure" | "anchored-figure" | "logo" | "cover" | "fill";
 
 const variantClass: Readonly<
   Record<FramedImageVariant, Readonly<{ frame: string; image: string }>>
 > = {
   plain: { frame: "relative overflow-hidden", image: "" },
-  portrait: { frame: "relative overflow-hidden", image: "block h-auto w-portrait" },
   figure: {
     frame: "relative h-full w-auto overflow-hidden",
     image: "h-full w-auto object-contain drop-shadow-glow",

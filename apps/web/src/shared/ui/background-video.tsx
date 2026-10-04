@@ -2,10 +2,11 @@ import type { ReactNode } from "react";
 
 import { cn } from "#/shared/lib";
 
-type VideoTone = "full" | "dim";
+type VideoTone = "full" | "shade" | "dim";
 
 const toneClass: Readonly<Record<VideoTone, string>> = {
   full: "opacity-100",
+  shade: "opacity-75",
   dim: "opacity-50",
 };
 

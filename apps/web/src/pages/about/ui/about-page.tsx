@@ -1,17 +1,14 @@
 import type { ReactNode } from "react";
 
-import { PageSection, SectionTitle } from "#/shared/ui";
+import { PageSection } from "#/shared/ui";
 
-import { AboutPortrait } from "./about-portrait";
+import { AboutHeading } from "./about-heading";
 import { AboutProfile } from "./about-profile";
-
-const TITLE = "ABOUT";
 
 const AboutPage = (): ReactNode => (
   <PageSection backdrop="litmus" decoration="/010_PageSideTitleSvg/ABOUT.svg" height="content">
-    <SectionTitle>{TITLE}</SectionTitle>
-    <div className="grid-cols-about grid items-center gap-16">
-      <AboutPortrait />
+    <div className="grid-cols-about grid items-start gap-16">
+      <AboutHeading />
       <AboutProfile />
     </div>
   </PageSection>

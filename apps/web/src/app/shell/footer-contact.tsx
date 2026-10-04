@@ -4,9 +4,12 @@ import type { ReactNode } from "react";
 const CONTACT_LABEL = "CONTACT";
 
 const FooterContact = (): ReactNode => (
-  <div className="rounded-pill text-caption flex flex-col items-end justify-center border border-solid px-16 py-2">
-    <Link to="/contact">{CONTACT_LABEL}</Link>
-  </div>
+  <Link
+    to="/contact"
+    className="rounded-pill text-caption font-montserrat tracking-latin hover:bg-accent hover:border-accent block border border-solid px-16 py-2 transition-all duration-300 ease-in-out hover:scale-120"
+  >
+    {CONTACT_LABEL}
+  </Link>
 );
 
 export { FooterContact };

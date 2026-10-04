@@ -7,7 +7,7 @@ import { FramedImage } from "#/shared/ui";
 import { DownloadCardInfo } from "./download-card-info";
 
 const DownloadCardFace = ({ item }: Readonly<{ item: DownloadItem }>): ReactNode => (
-  <article className="focus-ring-within min-w-card-min rounded-card border-hairline bg-frost backdrop-blur-glass hover:border-download-border-hover hover:shadow-download-hover relative flex h-full cursor-pointer flex-col overflow-hidden border border-solid transition-all duration-300 ease-in-out hover:-translate-y-2.5">
+  <article className="focus-ring-within min-w-card-min rounded-card border-hairline bg-frost backdrop-blur-glass hover:bg-download-hover hover:border-ink relative flex h-full cursor-pointer flex-col overflow-hidden border-2 border-solid transition-all duration-300 ease-in-out hover:scale-105">
     <div className="bg-background pb-thumb-ratio relative w-full overflow-hidden">
       <FramedImage src={item.image} alt={item.name} variant="fill" />
     </div>
