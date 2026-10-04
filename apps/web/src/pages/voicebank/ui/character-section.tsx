@@ -14,7 +14,7 @@ const CharacterSection = (): ReactNode => {
   return (
     <section
       id="character"
-      className="relative flex min-h-screen items-center justify-center bg-cover bg-fixed bg-center py-16 max-xl:flex-col"
+      className="relative flex min-h-screen snap-start items-center justify-center bg-cover bg-fixed bg-center py-16 max-xl:flex-col"
     >
       {mode.status === "corrupted" && <CorruptedBackdrop />}
       <CharacterFigure status={mode.status} />

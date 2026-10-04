@@ -5,7 +5,10 @@ import { Container } from "#/shared/ui";
 import { DownloadBrowser } from "./download-browser";
 
 const DownloadSection = (): ReactNode => (
-  <section id="downloads" className="relative min-h-screen bg-cover bg-fixed bg-center py-16">
+  <section
+    id="downloads"
+    className="relative min-h-screen snap-start bg-cover bg-fixed bg-center py-16"
+  >
     <Container>
       <DownloadBrowser />
     </Container>
