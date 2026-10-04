@@ -9,9 +9,6 @@ const DESCRIPTION =
   "LitMusの公式ウェブサイトです。ポートフォリオのほか、合成音声ライブラリ「離途」のVOICEVOX、UTAU音源を配布しています。";
 const SITE_URL = "https://litmus9.com/";
 const OGP_IMAGE = "/OGP_Main.png";
-const FONTS_ORIGIN = "https://fonts.googleapis.com";
-const FONT_FILES_ORIGIN = "https://fonts.gstatic.com";
-const FONTS_STYLESHEET = `${FONTS_ORIGIN}/css2?family=Montserrat:wght@900&family=Noto+Sans+JP:wght@900&family=Zen+Kaku+Gothic+New:wght@900&display=swap`;
 
 const Route = createRootRoute({
   head: () => ({
@@ -39,9 +36,6 @@ const Route = createRootRoute({
     links: [
       { rel: "icon", type: "image/webp", href: "/favicon.webp" },
       { rel: "manifest", href: "/manifest.json" },
-      { rel: "preconnect", href: FONTS_ORIGIN },
-      { rel: "preconnect", href: FONT_FILES_ORIGIN, crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: FONTS_STYLESHEET },
       { rel: "stylesheet", href: appCss },
     ],
   }),

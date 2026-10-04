@@ -12,10 +12,14 @@
     "typecheck": "tsc --noEmit",
     "steiger": "steiger ./src",
     "prepare": "effect-tsgo patch --typescript --oxlint",
-    "fallow": "fallow --production --quiet --format compact && fallow dupes --quiet --format compact && fallow security --fail-on-issues --quiet"
+    "fallow": "fallow --production --quiet --format compact && fallow dupes --quiet --format compact && fallow security --fail-on-issues --quiet",
+    "lighthouse": "lhci autorun"
   },
   "dependencies": {
     "@effect/atom-react": "catalog:stack",
+    "@fontsource/montserrat": "catalog:",
+    "@fontsource/noto-sans-jp": "catalog:",
+    "@fontsource/zen-kaku-gothic-new": "catalog:",
     "@tanstack/react-devtools": "0.10.13",
     "@tanstack/react-router": "1.170.40",
     "@tanstack/react-router-devtools": "1.167.2",
@@ -32,6 +36,7 @@
   "devDependencies": {
     "@effect/tsgo": "catalog:stack",
     "@feature-sliced/steiger-plugin": "0.8.0",
+    "@lhci/cli": "catalog:",
     "@tailwindcss/vite": "4.3.3",
     "@tanstack/devtools-vite": "0.8.5",
     "@tanstack/react-start": "catalog:stack",

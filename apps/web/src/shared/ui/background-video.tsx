@@ -17,9 +17,16 @@ const BackgroundVideo = ({ src, tone }: Readonly<{ src: string; tone: VideoTone 
       toneClass[tone],
     )}
   >
-    <video autoPlay loop muted preload="metadata" className="size-full object-cover">
-      <source src={`${src}.mp4`} type="video/mp4" />
+    <video
+      autoPlay
+      loop
+      muted
+      preload="metadata"
+      poster={`${src}.webp`}
+      className="size-full object-cover"
+    >
       <source src={`${src}.webm`} type="video/webm" />
+      <source src={`${src}.mp4`} type="video/mp4" />
     </video>
   </div>
 );

@@ -31,14 +31,25 @@ const FramedImage = ({
   alt,
   variant = "plain",
   loading = "lazy",
+  width,
+  height,
 }: Readonly<{
   src: string;
   alt: string;
   variant?: FramedImageVariant;
   loading?: ImageLoading;
+  width?: number;
+  height?: number;
 }>): ReactNode => (
   <div className={variantClass[variant].frame}>
-    <img src={src} alt={alt} loading={loading} className={variantClass[variant].image} />
+    <img
+      src={src}
+      alt={alt}
+      loading={loading}
+      width={width}
+      height={height}
+      className={variantClass[variant].image}
+    />
   </div>
 );
 
