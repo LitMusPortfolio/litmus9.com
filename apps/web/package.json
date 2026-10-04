@@ -37,6 +37,8 @@
     "@effect/tsgo": "catalog:stack",
     "@feature-sliced/steiger-plugin": "0.8.0",
     "@lhci/cli": "catalog:",
+    "@svgr/plugin-jsx": "catalog:",
+    "@svgr/plugin-svgo": "catalog:",
     "@tailwindcss/vite": "4.3.3",
     "@tanstack/devtools-vite": "0.8.5",
     "@tanstack/react-start": "catalog:stack",
@@ -47,6 +49,7 @@
     "steiger": "catalog:stack",
     "typescript": "catalog:stack",
     "vite": "catalog:",
+    "vite-plugin-svgr": "catalog:",
     "vite-plus": "catalog:stack"
   }
 }

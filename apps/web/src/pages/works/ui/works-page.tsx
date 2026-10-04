@@ -5,6 +5,7 @@ import { worksFilterAtom } from "#/pages/works/model/filter";
 import type { FilterTab } from "#/shared/ui";
 import { FilterTabs, PageSection, SectionTitle } from "#/shared/ui";
 
+import SideTitle from "./side-title.svg?react";
 import { WorksGrid } from "./works-grid";
 
 const TABS: readonly FilterTab<WorksFilter>[] = [
@@ -19,7 +20,7 @@ const TABS_LABEL = "Filter works by category";
 const TITLE = "WORKS";
 
 const WorksPage = (): ReactNode => (
-  <PageSection backdrop="litmus" decoration="/010_PageSideTitleSvg/WORKS.svg">
+  <PageSection backdrop="litmus" decoration={SideTitle}>
     <SectionTitle>{TITLE}</SectionTitle>
     <FilterTabs label={TABS_LABEL} tabs={TABS} atom={worksFilterAtom}>
       <WorksGrid />

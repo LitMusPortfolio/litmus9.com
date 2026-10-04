@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { cn } from "#/shared/lib";
 
 type DecorationSide = "left" | "right";
+type DecorationGraphic = (props: Readonly<{ className: string }>) => ReactNode | Promise<ReactNode>;
 
 const sideClass: Readonly<Record<DecorationSide, string>> = {
   right: "-right-side-decoration-offset -z-200",
@@ -15,9 +16,9 @@ const clipClass: Readonly<Record<DecorationSide, string>> = {
 };
 
 const DecorationHalf = ({
-  src,
+  graphic: Graphic,
   side,
-}: Readonly<{ src: string; side: DecorationSide }>): ReactNode => (
+}: Readonly<{ graphic: DecorationGraphic; side: DecorationSide }>): ReactNode => (
   <div
     aria-hidden="true"
     className={cn(
@@ -25,9 +26,7 @@ const DecorationHalf = ({
       sideClass[side],
     )}
   >
-    <img
-      src={src}
-      alt=""
+    <Graphic
       className={cn(
         "absolute top-1/2 left-1/2 h-full w-auto -translate-1/2 opacity-80 mobile:opacity-30",
         clipClass[side],
@@ -36,5 +35,5 @@ const DecorationHalf = ({
   </div>
 );
 
-export type { DecorationSide };
+export type { DecorationGraphic, DecorationSide };
 export { DecorationHalf };

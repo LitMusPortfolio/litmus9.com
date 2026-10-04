@@ -1,9 +1,12 @@
+import svgrJsx from "@svgr/plugin-jsx";
+import svgrSvgo from "@svgr/plugin-svgo";
 import tailwindcss from "@tailwindcss/vite";
 import { devtools } from "@tanstack/devtools-vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import rsc from "@vitejs/plugin-rsc";
 import { DateTime } from "effect";
+import svgr from "vite-plugin-svgr";
 import { defineConfig } from "vite-plus";
 
 const BUILD_YEAR = String(DateTime.getPartUtc(DateTime.nowUnsafe(), "year"));
@@ -21,5 +24,6 @@ export default defineConfig({
     }),
     rsc(),
     viteReact(),
+    svgr({ svgrOptions: { plugins: [svgrSvgo, svgrJsx] } }),
   ],
 });
