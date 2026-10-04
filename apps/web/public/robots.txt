@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://litmus9.com/sitemap.xml

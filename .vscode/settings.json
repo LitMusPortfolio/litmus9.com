@@ -1,7 +1,0 @@
-{
-  "editor.defaultFormatter": "biomejs.biome",
-  "deno.enable": false,
-  "[json]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  }
-}

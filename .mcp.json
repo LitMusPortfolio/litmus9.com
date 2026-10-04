@@ -1,8 +1,9 @@
 {
   "mcpServers": {
-    "chrome-devtools": {
-      "command": "bunx",
-      "args": ["-y", "chrome-devtools-mcp@latest"]
+    "fallow": {
+      "type": "stdio",
+      "command": "vp",
+      "args": ["exec", "fallow-mcp"]
     }
   }
 }

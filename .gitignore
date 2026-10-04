@@ -12,12 +12,15 @@ dist
 dist-ssr
 *.local
 
-worktrees/
+# dotenv environment variable files
+.env
+.env.*
+!.env.example
 
 # Editor directories and files
 .vscode/*
-!.vscode/extensions.json
 !.vscode/settings.json
+!.vscode/extensions.json
 .idea
 .DS_Store
 *.suo
@@ -26,19 +29,12 @@ worktrees/
 *.sln
 *.sw?
 
-!.claude/
-.cursor/
-.specstory/
+# AI agent worktrees
+.claude/worktrees/
 
-storybook-static/
-
-# reg-suit
-.reg/
-.reg-storage/
-__screenshots__/
-
-# Test coverage
-coverage/
-
-*.Identifier
-.envrc
+.nitro
+.tanstack
+.output
+.alchemy
+.fallow
+.jev-lint/baseline.json

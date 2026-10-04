@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://litmusportfolio.github.io/sitemap.xml
