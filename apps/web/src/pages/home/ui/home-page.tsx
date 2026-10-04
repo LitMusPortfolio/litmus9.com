@@ -12,14 +12,17 @@ const HomePage = (): ReactNode => (
   <section className="fixed top-0 left-0 h-screen min-h-screen w-full overflow-hidden bg-cover bg-fixed bg-center p-0">
     <BackgroundVideo src="/001_top/LitMusHPTopMovie" tone="full" />
     <HomeIntro />
-    <Link to="/voicebank" className="backdrop-blur-glass absolute top-24 right-12">
+    <Link
+      to="/voicebank"
+      className="backdrop-blur-glass mobile:right-4 mobile:left-4 absolute top-24 right-12"
+    >
       <FramedImage src="/001_top/離途バナー.webp" alt={BANNER_ALT} />
     </Link>
-    <div className="absolute right-12 bottom-32 z-10">
+    <div className="mobile:right-auto mobile:bottom-20 mobile:left-4 absolute right-12 bottom-32 z-10">
       <SocialLinks size="lg" />
     </div>
-    <div className="bg-veil backdrop-blur-glass absolute right-0 bottom-0 left-0 flex w-full gap-8 overflow-hidden px-12 py-4">
-      <span className="motion-safe:animate-marquee">{NEWS}</span>
+    <div className="bg-veil backdrop-blur-glass mobile:px-4 absolute right-0 bottom-0 left-0 flex w-full gap-8 overflow-hidden px-12 py-4">
+      <span className="motion-safe:animate-marquee whitespace-nowrap">{NEWS}</span>
     </div>
   </section>
 );

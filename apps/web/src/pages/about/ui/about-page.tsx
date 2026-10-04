@@ -10,7 +10,7 @@ const TITLE = "ABOUT";
 const AboutPage = (): ReactNode => (
   <PageSection backdrop="litmus" decoration="/010_PageSideTitleSvg/ABOUT.svg" height="content">
     <SectionTitle>{TITLE}</SectionTitle>
-    <div className="grid-cols-about grid items-center gap-16">
+    <div className="grid-cols-about mobile:grid-cols-single mobile:gap-8 grid items-center gap-16">
       <AboutPortrait />
       <AboutProfile />
     </div>

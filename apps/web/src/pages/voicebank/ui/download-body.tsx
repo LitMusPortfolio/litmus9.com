@@ -7,9 +7,9 @@ import { DownloadLinks } from "./download-links";
 import { DownloadParagraphs } from "./download-paragraphs";
 
 const DownloadBody = ({ item }: Readonly<{ item: DownloadItem }>): ReactNode => (
-  <div className="p-16">
+  <div className="mobile:p-2 p-16">
     <div className="mb-8 flex w-full items-center">
-      <Dialog.Title className="text-h2l m-0 font-semibold whitespace-nowrap">
+      <Dialog.Title className="text-h2l mobile:text-h3 mobile:whitespace-normal m-0 font-semibold whitespace-nowrap">
         {item.name}
       </Dialog.Title>
       <div className="bg-foreground ml-4 h-0.5 flex-1 opacity-80" />

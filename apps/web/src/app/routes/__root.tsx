@@ -13,12 +13,8 @@ const FONTS_ORIGIN = "https://fonts.googleapis.com";
 const FONT_FILES_ORIGIN = "https://fonts.gstatic.com";
 const FONTS_STYLESHEET = `${FONTS_ORIGIN}/css2?family=Montserrat:wght@900&family=Noto+Sans+JP:wght@900&family=Zen+Kaku+Gothic+New:wght@900&display=swap`;
 
-const MOBILE_AGENT_FLAG =
-  'if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) document.documentElement.dataset.mobileAgent = "";';
-
 const Route = createRootRoute({
   head: () => ({
-    scripts: [{ children: MOBILE_AGENT_FLAG }],
     meta: [
       { charSet: "utf8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },

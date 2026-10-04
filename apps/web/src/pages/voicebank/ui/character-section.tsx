@@ -11,7 +11,7 @@ const CharacterSection = (): ReactNode => (
     id="character"
     className="relative flex min-h-screen items-center justify-center bg-cover bg-fixed bg-center py-16"
   >
-    <div className="h-character absolute bottom-0 left-0 z-1 w-auto transition-all duration-300">
+    <div className="h-character mobile:opacity-40 absolute bottom-0 left-0 z-1 w-auto transition-all duration-300">
       <FramedImage src="/201_Lit立ち絵/LitB.webp" alt={CHARACTER_ALT} variant="anchored-figure" />
     </div>
     <Container layout="row">

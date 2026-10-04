@@ -5,15 +5,7 @@
 
 @custom-variant tablet (@media (max-width: 968px));
 
-@custom-variant mobile {
-  @media (max-width: 768px) {
-    @slot;
-  }
-
-  &:where([data-mobile-agent] *) {
-    @slot;
-  }
-}
+@custom-variant mobile (@media (max-width: 768px));
 
 @theme {
   --color-background: #000000;
@@ -216,8 +208,8 @@
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
-    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+    gap: 0.75rem;
   }
 }
 
