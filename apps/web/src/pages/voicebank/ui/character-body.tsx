@@ -1,23 +1,31 @@
+import { useAtomValue } from "@effect/atom-react";
 import type { ReactNode } from "react";
 
-import { SectionTitle, TitleWithLine } from "#/shared/ui";
+import type { CharacterMode } from "#/pages/voicebank/model/character-state";
+import { characterModeAtom } from "#/pages/voicebank/model/character-state";
+import { SectionTitle } from "#/shared/ui";
 
-import { DemoSongs } from "./demo-songs";
-import { ProfileColumns } from "./profile-columns";
+import { CharacterProfile } from "./character-profile";
+import { ResearchLogs } from "./research-logs";
 
 const TITLE = "CHARACTER";
-const NAME = "離途";
+const CONTENT: Readonly<Record<CharacterMode["status"], () => ReactNode>> = {
+  profile: CharacterProfile,
+  corrupted: ResearchLogs,
+};
 
-const CharacterBody = (): ReactNode => (
-  <>
-    <div className="w-spacer shrink-0 transition-all duration-300 max-xl:hidden" />
-    <div className="flex flex-1 flex-col justify-end">
-      <SectionTitle tone="title">{TITLE}</SectionTitle>
-      <TitleWithLine title={NAME} />
-      <ProfileColumns />
-      <DemoSongs />
-    </div>
-  </>
-);
+const CharacterBody = (): ReactNode => {
+  const mode = useAtomValue(characterModeAtom);
+  const Content = CONTENT[mode.status];
+  return (
+    <>
+      <div className="w-spacer shrink-0 transition-all duration-300 max-xl:hidden" />
+      <div className="flex flex-1 flex-col justify-end">
+        <SectionTitle tone="title">{TITLE}</SectionTitle>
+        <Content />
+      </div>
+    </>
+  );
+};
 
 export { CharacterBody };

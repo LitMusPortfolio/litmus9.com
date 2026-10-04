@@ -13,7 +13,7 @@ const DESCRIPTION = [
 ] as const;
 
 const HeroDescription = (): ReactNode => (
-  <div className="text-description max-xl:max-w-tablet-copy max-xl:col-start-1 max-xl:row-start-2 max-xl:mt-8">
+  <div className="text-description motion-safe:animate-fade-in motion-safe:animation-delay-1400 max-xl:max-w-tablet-copy max-xl:col-start-1 max-xl:row-start-2 max-xl:mt-8">
     {DESCRIPTION.map((lines) => (
       <p key={lines.join("\n")} className="mb-desc mt-0 leading-normal last:mb-0">
         <Lines lines={lines} />

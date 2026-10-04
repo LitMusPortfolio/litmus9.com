@@ -6,7 +6,7 @@ import { WorkInfo } from "./work-info";
 import { YoutubeThumbnail } from "./youtube-thumbnail";
 
 const WorkCard = ({ work }: Readonly<{ work: Work }>): ReactNode => (
-  <article className="rounded-glass border-glass-border bg-veil backdrop-blur-glass hover:shadow-card-hover relative flex h-full cursor-pointer flex-col overflow-hidden border border-solid transition-all duration-300 hover:-translate-y-1">
+  <article className="rounded-glass border-glass-border bg-glass-light backdrop-blur-glass hover:bg-accent hover:border-ink relative flex h-full cursor-pointer flex-col overflow-hidden border-2 border-solid transition-all duration-300 motion-safe:hover:scale-105">
     <div className="bg-background pb-thumb-ratio relative w-full overflow-hidden">
       <YoutubeThumbnail link={work.link} title={work.title} />
     </div>

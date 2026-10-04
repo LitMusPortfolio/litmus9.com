@@ -25,7 +25,7 @@ const PROFILE = [
 ] as const;
 
 const AboutProfile = (): ReactNode => (
-  <div>
+  <div className="pt-24">
     <TitleWithLine title={NAME} />
     <h3 className="mb-4">
       <Lines lines={ROLES} />
