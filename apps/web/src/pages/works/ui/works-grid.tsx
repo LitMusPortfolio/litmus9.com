@@ -12,7 +12,7 @@ const WorksGrid = (): ReactNode => {
   const filter = useAtomValue(worksFilterAtom);
   const works = route.useLoaderData();
   return (
-    <div className="max-h-works-list overflow-y-auto p-2">
+    <div className="p-2">
       <div className="card-grid">
         {works
           .filter((work) => filter === "all" || work.categories.includes(filter))

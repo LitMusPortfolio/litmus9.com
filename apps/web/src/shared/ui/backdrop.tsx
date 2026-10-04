@@ -10,13 +10,14 @@ const imageClass: Readonly<Record<BackdropImage, string>> = {
 };
 
 const Backdrop = ({ image }: Readonly<{ image: BackdropImage }>): ReactNode => (
-  <div
-    aria-hidden="true"
-    className={cn(
-      "absolute inset-0 -z-1000 bg-cover bg-fixed bg-center mobile:bg-scroll",
-      imageClass[image],
-    )}
-  />
+  <div aria-hidden="true" className="absolute inset-0 -z-1000">
+    <div
+      className={cn(
+        "size-full bg-cover bg-fixed bg-center mobile:sticky mobile:top-0 mobile:h-svh mobile:bg-scroll",
+        imageClass[image],
+      )}
+    />
+  </div>
 );
 
 export type { BackdropImage };
