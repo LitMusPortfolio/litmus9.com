@@ -11,7 +11,7 @@ const VISUAL_ALT = "離途 メインビジュアル";
 const HeroSection = (): ReactNode => (
   <section
     id="main"
-    className="max-xl:after:to-background relative flex min-h-screen items-center justify-start overflow-hidden bg-transparent bg-cover bg-fixed bg-center p-0 max-xl:grid max-xl:grid-cols-1 max-xl:items-start max-xl:overflow-clip max-xl:pb-32 max-xl:after:absolute max-xl:after:inset-x-0 max-xl:after:bottom-0 max-xl:after:z-1 max-xl:after:h-32 max-xl:after:bg-linear-to-b max-xl:after:from-transparent"
+    className="max-xl:after:to-background relative flex min-h-screen snap-start items-center justify-start overflow-hidden bg-transparent bg-cover bg-fixed bg-center p-0 max-xl:grid max-xl:grid-cols-1 max-xl:items-start max-xl:overflow-clip max-xl:pb-32 max-xl:after:absolute max-xl:after:inset-x-0 max-xl:after:bottom-0 max-xl:after:z-1 max-xl:after:h-32 max-xl:after:bg-linear-to-b max-xl:after:from-transparent"
   >
     <div className="size-double bg-aurora motion-safe:animate-aurora absolute -top-1/2 -left-1/2 z-0" />
     <BackgroundVideo src="/101_Lit/LitTopMovie" tone="dim" />
