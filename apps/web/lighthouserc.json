@@ -1,0 +1,38 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": "./dist/client",
+      "url": [
+        "http://localhost/",
+        "http://localhost/about/",
+        "http://localhost/works/",
+        "http://localhost/voicebank/",
+        "http://localhost/contact/"
+      ]
+    },
+    "assert": {
+      "assertions": {
+        "cumulative-layout-shift": [
+          "error",
+          { "maxNumericValue": 0.1, "aggregationMethod": "median-run" }
+        ],
+        "total-blocking-time": [
+          "error",
+          { "maxNumericValue": 200, "aggregationMethod": "median-run" }
+        ],
+        "largest-contentful-paint": [
+          "warn",
+          { "maxNumericValue": 2500, "aggregationMethod": "median-run" }
+        ],
+        "first-contentful-paint": [
+          "warn",
+          { "maxNumericValue": 1800, "aggregationMethod": "median-run" }
+        ]
+      }
+    },
+    "upload": {
+      "target": "filesystem",
+      "outputDir": "./.lighthouseci"
+    }
+  }
+}

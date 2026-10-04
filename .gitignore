@@ -38,3 +38,5 @@ dist-ssr
 .alchemy
 .fallow
 .jev-lint/baseline.json
+
+.lighthouseci
