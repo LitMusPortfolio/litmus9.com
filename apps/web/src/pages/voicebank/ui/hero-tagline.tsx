@@ -5,7 +5,7 @@ import { Lines } from "#/shared/ui";
 const TAGLINE = ["優しさと吐息が香る", "穏やかな男声ソフトウェア。"] as const;
 
 const HeroTagline = (): ReactNode => (
-  <div className="mb-6">
+  <div className="motion-safe:animate-rise-in motion-safe:animation-delay-600 mb-6">
     <h2 className="bg-primary leading-tagline inline box-decoration-clone whitespace-nowrap">
       <Lines lines={TAGLINE} />
     </h2>
