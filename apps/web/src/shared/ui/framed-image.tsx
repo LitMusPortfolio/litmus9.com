@@ -16,7 +16,8 @@ const variantClass: Readonly<
     image: "h-full w-auto object-contain object-left-bottom drop-shadow-glow-lg",
   },
   logo: {
-    frame: "relative mb-8 w-1/2 max-xl:col-start-1 max-xl:row-start-1 max-xl:self-start",
+    frame:
+      "relative mb-8 w-1/2 mobile:w-3/4 max-xl:col-start-1 max-xl:row-start-1 max-xl:self-start",
     image: "h-auto w-auto max-h-hero-logo max-w-full",
   },
   cover: { frame: "relative overflow-hidden", image: "size-full object-cover" },
