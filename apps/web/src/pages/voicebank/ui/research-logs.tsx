@@ -54,7 +54,7 @@ const LOGS = [
 ] as const;
 
 const ResearchLogs = (): ReactNode => (
-  <div className="motion-safe:animate-fade-in w-full">
+  <div className="motion-safe:animate-glitch-text w-full">
     <TitleWithLine title={TITLE} />
     <div className="flex flex-col gap-6">
       {LOGS.map((log) => (
