@@ -86,7 +86,6 @@
   --spacing-hero-figure-h: calc(100svh - 4rem);
   --spacing-hero-figure: calc(var(--spacing-hero-figure-h) * 1.044);
   --spacing-hero-figure-x: calc(75vw - 0.36 * var(--spacing-hero-figure));
-  --spacing-hero-copy: 55svh;
   --spacing-modal-gap: 1.2rem;
   --spacing-lift: 3px;
   --spacing-press: 1px;
@@ -193,6 +192,10 @@
   grid-template-columns: 1fr 1fr;
 }
 
+@utility grid-rows-hero {
+  grid-template-rows: calc(100svh - 6.5rem) auto;
+}
+
 @utility grid-cols-single {
   grid-template-columns: 1fr;
 }
@@ -229,13 +232,13 @@
   @supports (animation-timeline: scroll()) {
     animation: hero-figure-fade linear both;
     animation-timeline: scroll(root);
-    animation-range: 0 50svh;
+    animation-range: 0 40svh;
   }
 }
 
 @keyframes hero-figure-fade {
   to {
-    opacity: 0.35;
+    filter: brightness(0.4);
   }
 }
 
