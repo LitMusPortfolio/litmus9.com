@@ -7,7 +7,7 @@ import { AboutPortrait } from "./about-portrait";
 const TITLE = "ABOUT";
 
 const AboutHeading = (): ReactNode => (
-  <div className="top-header sticky">
+  <div>
     <SectionTitle>{TITLE}</SectionTitle>
     <AboutPortrait />
   </div>
