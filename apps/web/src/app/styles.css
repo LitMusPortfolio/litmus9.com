@@ -10,7 +10,7 @@
 
 @custom-variant mobile (@media (max-width: 768px));
 
-@custom-variant hero-stacked (@media (width <= 768px) or ((width < 80rem) and (height < 45rem)));
+@custom-variant hero-stacked (@media (width < 80rem) and (height < 45rem));
 
 @theme {
   --color-background: #000000;
