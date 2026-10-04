@@ -5,9 +5,11 @@ const DownloadParagraphs = ({
   paragraphs,
 }: Readonly<{ paragraphs: readonly string[] }>): ReactNode => (
   <Dialog.Description asChild>
-    <div className="text-secondary-foreground flex flex-col gap-5">
+    <div>
       {paragraphs.map((paragraph) => (
-        <p key={paragraph}>{paragraph}</p>
+        <p key={paragraph} className="mb-modal-gap text-foreground-soft">
+          {paragraph}
+        </p>
       ))}
     </div>
   </Dialog.Description>

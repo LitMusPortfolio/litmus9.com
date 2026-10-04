@@ -2,6 +2,8 @@ import type { ReactNode } from "react";
 
 import { cn } from "#/shared/lib";
 
+import { FramedImage } from "./framed-image";
+
 type SocialLinkSize = "sm" | "lg";
 
 const SOCIAL_LINKS = [
@@ -19,8 +21,8 @@ const SOCIAL_LINKS = [
 ] as const;
 
 const sizeClass: Readonly<Record<SocialLinkSize, string>> = {
-  sm: "size-6",
-  lg: "size-10",
+  sm: "size-icon-sm",
+  lg: "size-icon-lg",
 };
 
 const SocialLinks = ({ size }: Readonly<{ size: SocialLinkSize }>): ReactNode => (
@@ -31,9 +33,13 @@ const SocialLinks = ({ size }: Readonly<{ size: SocialLinkSize }>): ReactNode =>
         href={link.url}
         target="_blank"
         rel="noopener noreferrer"
-        className={cn("inline-block transition-transform hover:scale-110", sizeClass[size])}
+        aria-label={link.platform}
+        className={cn(
+          "inline-block transition-transform duration-300 ease-in-out hover:scale-110",
+          sizeClass[size],
+        )}
       >
-        <img src={link.icon} alt={link.platform} className="size-full" />
+        <FramedImage src={link.icon} alt={link.platform} loading="eager" />
       </a>
     ))}
   </div>

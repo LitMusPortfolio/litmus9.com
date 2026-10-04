@@ -7,7 +7,7 @@ const SectionTitle = ({
   children,
   tone = "name",
 }: Readonly<{ children: string; tone?: MarkerTone }>): ReactNode => (
-  <h1 className="text-display mb-8 flex flex-col items-start">
+  <h1 className="mb-8 flex flex-col items-start">
     <Marker tone={tone}>{children}</Marker>
   </h1>
 );

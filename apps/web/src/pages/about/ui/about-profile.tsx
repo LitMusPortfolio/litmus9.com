@@ -25,12 +25,12 @@ const PROFILE = [
 ] as const;
 
 const AboutProfile = (): ReactNode => (
-  <div className="col-span-7">
+  <div>
     <TitleWithLine title={NAME} />
-    <h3 className="mb-4 text-2xl">
+    <h3 className="mb-4">
       <Lines lines={ROLES} />
     </h3>
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-2">
       <Paragraphs paragraphs={PROFILE} />
     </div>
   </div>

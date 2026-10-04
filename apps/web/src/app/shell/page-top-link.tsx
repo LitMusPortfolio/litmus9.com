@@ -1,10 +1,13 @@
 import type { ReactNode } from "react";
 
+import { FramedImage } from "#/shared/ui";
+
 const PAGE_TOP_LABEL = "ページの一番上に移動";
+const PAGE_TOP_ALT = "Pageの一番上に移動するボタン。Page Topと書かれている。";
 
 const PageTopLink = (): ReactNode => (
-  <a href="#top" aria-label={PAGE_TOP_LABEL} className="w-page-top">
-    <img src="/001_top/FooterPageTop.svg" alt="" width="623" height="107" className="w-full" />
+  <a href="#top" aria-label={PAGE_TOP_LABEL} className="w-page-top block cursor-pointer">
+    <FramedImage src="/001_top/FooterPageTop.svg" alt={PAGE_TOP_ALT} />
   </a>
 );
 

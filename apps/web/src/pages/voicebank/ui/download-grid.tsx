@@ -9,7 +9,7 @@ import { DownloadCard } from "./download-card";
 const DownloadGrid = (): ReactNode => {
   const filter = useAtomValue(downloadFilterAtom);
   return (
-    <div className="grid auto-rows-fr grid-cols-3 gap-4 lg:grid-cols-4">
+    <div className="card-grid">
       {DOWNLOADS.filter((item) => filter === "all" || item.type === filter).map((item) => (
         <DownloadCard key={item.id} item={item} />
       ))}

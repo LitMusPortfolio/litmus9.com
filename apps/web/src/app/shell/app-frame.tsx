@@ -6,8 +6,10 @@ import { MobileNotice } from "./mobile-notice";
 
 const AppFrame = ({ children }: Readonly<{ children: ReactNode }>): ReactNode => (
   <RegistryProvider>
-    <Header />
-    <main>{children}</main>
+    <div className="mobile:hidden flex min-h-screen flex-col">
+      <Header />
+      {children}
+    </div>
     <MobileNotice />
   </RegistryProvider>
 );

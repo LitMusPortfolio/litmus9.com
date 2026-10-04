@@ -9,15 +9,15 @@ const TAG_LINES = [
 ] as const;
 
 const TagLines = (): ReactNode => (
-  <ul className="font-display flex flex-col gap-4">
+  <div className="mt-16 flex flex-col gap-4">
     {TAG_LINES.map((tags) => (
-      <li key={tags.join(" ")} className="flex flex-wrap gap-4">
+      <div key={tags.join(" ")} className="font-montserrat flex flex-wrap justify-start gap-4">
         {tags.map((tag) => (
           <Marker key={tag}>{tag}</Marker>
         ))}
-      </li>
+      </div>
     ))}
-  </ul>
+  </div>
 );
 
 export { TagLines };

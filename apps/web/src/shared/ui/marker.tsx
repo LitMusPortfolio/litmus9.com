@@ -13,15 +13,15 @@ const Marker = ({
   children,
   tone = "name",
 }: Readonly<{ children: ReactNode; tone?: MarkerTone }>): ReactNode => (
-  <span className="relative isolate inline-flex items-center leading-none">
+  <span className="marker-strut relative inline-flex items-center leading-none">
     <span
       aria-hidden="true"
       className={cn(
-        "absolute inset-x-0 top-marker-top bottom-marker-bottom -z-10",
+        "absolute top-marker-top bottom-marker-bottom -left-hair -right-hair -z-1 block bg-auto-full bg-center bg-repeat-x",
         toneClass[tone],
       )}
     />
-    <span className="py-marker leading-marker relative block">{children}</span>
+    <span className="py-marker-y leading-marker relative z-2 block">{children}</span>
   </span>
 );
 

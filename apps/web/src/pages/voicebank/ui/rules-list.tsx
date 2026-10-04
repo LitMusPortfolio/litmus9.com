@@ -57,12 +57,9 @@ const RULES = [
   },
 ] as const;
 
-const RulesList = (): ReactNode => (
-  <div className="flex flex-col gap-12">
-    {RULES.map((rule) => (
-      <TitledList key={rule.title} title={rule.title} items={rule.items} />
-    ))}
-  </div>
-);
+const RulesList = (): ReactNode =>
+  RULES.map((rule) => (
+    <TitledList key={rule.title} title={rule.title} items={rule.items} spacing="spaced" />
+  ));
 
 export { RulesList };

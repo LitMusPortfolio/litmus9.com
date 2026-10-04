@@ -5,8 +5,8 @@ import { cn } from "#/shared/lib";
 type DecorationSide = "left" | "right";
 
 const sideClass: Readonly<Record<DecorationSide, string>> = {
-  right: "-right-side-decoration-offset -z-20",
-  left: "-left-side-decoration-offset -z-10",
+  right: "-right-side-decoration-offset -z-200",
+  left: "-left-side-decoration-offset -z-50",
 };
 
 const clipClass: Readonly<Record<DecorationSide, string>> = {
@@ -29,13 +29,12 @@ const DecorationHalf = ({
       src={src}
       alt=""
       className={cn(
-        "absolute top-1/2 left-1/2 h-full w-auto max-w-none -translate-1/2 opacity-80",
+        "absolute top-1/2 left-1/2 h-full w-auto -translate-1/2 opacity-80",
         clipClass[side],
       )}
     />
   </div>
 );
 
-export { DecorationHalf };
-
 export type { DecorationSide };
+export { DecorationHalf };

@@ -12,7 +12,7 @@ const WorksGrid = (): ReactNode => {
   const filter = useAtomValue(worksFilterAtom);
   const works = route.useLoaderData();
   return (
-    <div className="grid auto-rows-fr grid-cols-3 gap-4 lg:grid-cols-4">
+    <div className="card-grid">
       {works
         .filter((work) => filter === "all" || work.categories.includes(filter))
         .map((work) => (

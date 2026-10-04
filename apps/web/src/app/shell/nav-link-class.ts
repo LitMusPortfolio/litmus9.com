@@ -1,3 +1,4 @@
-const NAV_LINK_CLASS = "uppercase tracking-widest transition-colors hover:text-accent";
+const NAV_ITEM_CLASS = "bullet-none font-montserrat";
+const NAV_LINK_CLASS = "uppercase tracking-widest hover:text-primary-light";
 
-export { NAV_LINK_CLASS };
+export { NAV_ITEM_CLASS, NAV_LINK_CLASS };

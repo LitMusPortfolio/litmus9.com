@@ -8,15 +8,18 @@ import { HeroSection } from "./hero-section";
 import { RulesSection } from "./rules-section";
 
 const VoicebankPage = (): ReactNode => (
-  <div className="overflow-hidden">
+  <section
+    id="voicebank"
+    className="relative min-h-screen overflow-hidden bg-cover bg-fixed bg-center p-0"
+  >
     <HeroSection />
-    <div className="relative isolate">
+    <section className="relative min-h-screen bg-cover bg-fixed bg-center py-16">
       <Backdrop image="lit" />
       <CharacterSection />
       <DownloadSection />
       <RulesSection />
-    </div>
-  </div>
+    </section>
+  </section>
 );
 
 export { VoicebankPage };

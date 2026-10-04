@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 
-import { NAV_LINK_CLASS } from "./nav-link-class";
+import { NAV_ITEM_CLASS, NAV_LINK_CLASS } from "./nav-link-class";
 import { ShopLink } from "./shop-link";
 
 const PAGES = [
@@ -12,18 +12,18 @@ const PAGES = [
 const CONTACT = { to: "/contact", label: "Contact" } as const;
 
 const NavMenu = (): ReactNode => (
-  <ul className="font-display flex gap-8">
+  <ul className="flex-row gap-8">
     {PAGES.map((page) => (
-      <li key={page.to}>
+      <li key={page.to} className={NAV_ITEM_CLASS}>
         <Link to={page.to} className={NAV_LINK_CLASS}>
           {page.label}
         </Link>
       </li>
     ))}
-    <li>
+    <li className={NAV_ITEM_CLASS}>
       <ShopLink />
     </li>
-    <li>
+    <li className={NAV_ITEM_CLASS}>
       <Link to={CONTACT.to} className={NAV_LINK_CLASS}>
         {CONTACT.label}
       </Link>

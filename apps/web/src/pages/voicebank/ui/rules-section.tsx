@@ -7,7 +7,7 @@ import { RulesList } from "./rules-list";
 const TITLE = "RULES";
 
 const RulesSection = (): ReactNode => (
-  <section id="rules" className="min-h-screen py-16">
+  <section id="rules" className="relative min-h-screen bg-cover bg-fixed bg-center py-16">
     <Container>
       <SectionTitle tone="title">{TITLE}</SectionTitle>
       <RulesList />

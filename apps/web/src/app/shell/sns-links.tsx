@@ -5,7 +5,7 @@ import { SocialLinks } from "#/shared/ui";
 const SNS_LABEL = "SNS";
 
 const SnsLinks = (): ReactNode => (
-  <div className="flex items-center gap-4">
+  <div className="mb-6 flex gap-4">
     <span className="me-2">{SNS_LABEL}</span>
     <SocialLinks size="sm" />
   </div>

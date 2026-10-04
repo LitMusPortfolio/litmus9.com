@@ -5,7 +5,9 @@ import { Footer } from "./footer";
 
 const SiteLayout = (): ReactNode => (
   <>
-    <Outlet />
+    <main>
+      <Outlet />
+    </main>
     <Footer />
   </>
 );

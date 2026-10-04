@@ -7,8 +7,8 @@ import { TagLines } from "./tag-lines";
 const TITLE = "LITMUS";
 
 const HomeIntro = (): ReactNode => (
-  <div className="absolute bottom-32 left-12 flex flex-col gap-16">
-    <h1 className="text-display leading-none">
+  <div className="absolute bottom-32 left-12 z-1 text-left">
+    <h1 className="m-0 leading-none">
       <Marker>{TITLE}</Marker>
     </h1>
     <TagLines />

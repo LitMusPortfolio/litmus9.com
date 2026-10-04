@@ -1,19 +1,22 @@
 import { Option } from "effect";
-import { PlayIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { youtubeThumbnailOf } from "#/pages/works/lib/youtube";
 
+import { PlayOverlay } from "./play-overlay";
+
 const YoutubeThumbnail = ({ link, title }: Readonly<{ link: string; title: string }>): ReactNode =>
   Option.match(youtubeThumbnailOf(link), {
-    onNone: () => <span aria-hidden="true" className="bg-background block size-full" />,
+    onNone: () => <div className="bg-background size-full" />,
     onSome: (src) => (
       <>
-        <img src={src} alt={title} loading="lazy" className="size-full object-cover" />
-        <PlayIcon
-          aria-hidden="true"
-          className="absolute top-1/2 left-1/2 size-12 -translate-1/2 fill-current opacity-80 drop-shadow-lg"
+        <img
+          src={src}
+          alt={title}
+          loading="lazy"
+          className="absolute top-0 left-0 size-full object-cover"
         />
+        <PlayOverlay />
       </>
     ),
   });

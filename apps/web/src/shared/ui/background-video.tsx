@@ -10,18 +10,17 @@ const toneClass: Readonly<Record<VideoTone, string>> = {
 };
 
 const BackgroundVideo = ({ src, tone }: Readonly<{ src: string; tone: VideoTone }>): ReactNode => (
-  <video
-    autoPlay
-    loop
-    muted
+  <div
     className={cn(
-      "absolute inset-0 -z-30 size-full object-cover motion-reduce:hidden",
+      "absolute top-1/2 left-1/2 -z-100 h-full min-h-full w-auto min-w-full -translate-1/2 overflow-hidden motion-reduce:hidden",
       toneClass[tone],
     )}
   >
-    <source src={`${src}.webm`} type="video/webm" />
-    <source src={`${src}.mp4`} type="video/mp4" />
-  </video>
+    <video autoPlay loop muted preload="metadata" className="size-full object-cover">
+      <source src={`${src}.mp4`} type="video/mp4" />
+      <source src={`${src}.webm`} type="video/webm" />
+    </video>
+  </div>
 );
 
 export { BackgroundVideo };
