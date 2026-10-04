@@ -15,7 +15,7 @@ const HeroSection = (): ReactNode => (
   >
     <div className="size-double bg-aurora motion-safe:animate-aurora absolute -top-1/2 -left-1/2 z-0" />
     <BackgroundVideo src="/101_Lit/LitTopMovie" tone="dim" />
-    <div className="mobile:px-4 max-xl:grid-rows-hero relative z-2 flex h-screen w-full flex-col items-start justify-center max-xl:col-start-1 max-xl:row-start-1 max-xl:grid max-xl:h-auto max-xl:justify-start max-xl:justify-items-start max-xl:px-8 max-xl:pt-20">
+    <div className="mobile:px-4 hero-stacked:grid-rows-hero hero-stacked:grid hero-stacked:h-auto hero-stacked:justify-start hero-stacked:justify-items-start hero-stacked:pt-20 relative z-2 flex h-screen w-full flex-col items-start justify-center max-xl:col-start-1 max-xl:row-start-1 max-xl:px-8">
       <HeroLogo />
       <HeroCopy />
     </div>
