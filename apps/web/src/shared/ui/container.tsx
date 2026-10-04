@@ -15,7 +15,7 @@ const Container = ({
 }: Readonly<{ layout?: ContainerLayout; children: ReactNode }>): ReactNode => (
   <div
     className={cn(
-      "relative z-2 mx-auto w-container px-container-x py-container-y mobile:w-full mobile:px-4",
+      "relative z-2 mx-auto w-container px-container-x py-container-y tablet:w-full tablet:px-8 mobile:px-4",
       layoutClass[layout],
     )}
   >

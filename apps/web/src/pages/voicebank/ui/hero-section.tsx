@@ -15,11 +15,11 @@ const HeroSection = (): ReactNode => (
   >
     <div className="size-double bg-aurora motion-safe:animate-aurora absolute -top-1/2 -left-1/2 z-0" />
     <BackgroundVideo src="/101_Lit/LitTopMovie" tone="dim" />
-    <div className="mobile:px-4 relative z-2 flex h-screen w-full flex-col items-start justify-center max-xl:-mt-24 max-xl:h-auto max-xl:items-center max-xl:px-8">
+    <div className="mobile:px-4 relative z-2 flex h-screen w-full flex-col items-start justify-center max-xl:h-auto max-xl:justify-start max-xl:px-8 max-xl:pt-24">
       <FramedImage src="/101_Lit/Litlogo.webp" alt={LOGO_ALT} variant="logo" />
       <HeroCopy />
     </div>
-    <div className="h-character pointer-events-none absolute right-0 bottom-0 z-1 w-auto max-xl:static max-xl:order-first max-xl:h-auto max-xl:w-full max-xl:max-w-xl max-xl:mask-b-from-50% max-xl:pt-14">
+    <div className="h-character max-xl:left-hero-figure-x max-xl:w-hero-figure pointer-events-none absolute right-0 bottom-0 z-1 w-auto max-xl:top-14 max-xl:right-auto max-xl:bottom-auto max-xl:h-auto max-xl:mask-b-from-50%">
       <FramedImage src="/201_Lit立ち絵/LitA.webp" alt={VISUAL_ALT} variant="figure" />
     </div>
     <FreeDownloadButton />

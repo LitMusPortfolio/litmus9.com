@@ -4,7 +4,7 @@ import { HeroDescription } from "./hero-description";
 import { HeroTagline } from "./hero-tagline";
 
 const HeroCopy = (): ReactNode => (
-  <div className="ml-tagline-indent max-xl:max-w-tablet-copy flex flex-col items-start max-xl:ml-0 max-xl:items-center">
+  <div className="ml-tagline-indent max-xl:max-w-tablet-copy flex flex-col items-start max-xl:ml-0">
     <HeroTagline />
     <HeroDescription />
   </div>
