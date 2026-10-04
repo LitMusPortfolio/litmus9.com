@@ -40,7 +40,7 @@ const FilterTabs = <Value extends string>({
           <Tabs.Trigger
             key={tab.value}
             value={tab.value}
-            className="rounded-pill font-montserrat tracking-latin text-caption border-foreground hover:bg-accent hover:border-accent aria-selected:bg-foreground aria-selected:text-background focus-visible:outline-primary relative w-32 cursor-pointer border border-solid bg-transparent py-2 text-center whitespace-nowrap transition-all duration-300 ease-in-out hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2"
+            className="rounded-pill font-montserrat tracking-latin text-caption border-foreground hover:bg-accent hover:border-accent aria-selected:bg-foreground aria-selected:text-background focus-visible:outline-primary relative w-32 cursor-pointer border border-solid bg-transparent py-2 text-center whitespace-nowrap transition-all duration-300 ease-in-out focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:hover:scale-110"
           >
             {tab.label}
           </Tabs.Trigger>

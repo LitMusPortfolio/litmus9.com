@@ -516,7 +516,8 @@
     background-color 0.3s ease,
     color 0.3s ease;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     animation: none;
     scale: 1;
   }

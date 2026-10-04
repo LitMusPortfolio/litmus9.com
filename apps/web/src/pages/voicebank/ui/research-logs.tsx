@@ -1,10 +1,8 @@
 import type { ReactNode } from "react";
 
-import { TitleWithLine } from "#/shared/ui";
-
 import { ResearchLog } from "./research-log";
+import { ResearchTitle } from "./research-title";
 
-const TITLE = "螳滄ｨ謎ｽ?髮｢騾?";
 const LOGS = [
   {
     title: "Research log 01",
@@ -55,7 +53,7 @@ const LOGS = [
 
 const ResearchLogs = (): ReactNode => (
   <div className="motion-safe:animate-glitch-text w-full">
-    <TitleWithLine title={TITLE} />
+    <ResearchTitle />
     <div className="flex flex-col gap-6">
       {LOGS.map((log) => (
         <ResearchLog key={log.title} title={log.title} paragraphs={log.paragraphs} />

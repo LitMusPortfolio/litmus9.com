@@ -46,7 +46,7 @@ const SocialLinks = ({
         rel="noopener noreferrer"
         aria-label={link.platform}
         className={cn(
-          "inline-block opacity-60 transition-all duration-300 ease-in-out hover:scale-130 hover:opacity-100",
+          "inline-block opacity-60 transition-all duration-300 ease-in-out motion-safe:hover:scale-130 hover:opacity-100",
           sizeClass[size],
         )}
       >

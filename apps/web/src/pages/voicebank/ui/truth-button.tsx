@@ -15,6 +15,7 @@ const TONES: Readonly<Record<CharacterMode["status"], string>> = {
   profile: "bg-background text-ink",
   corrupted: "bg-ink text-background",
 };
+const LABEL = "離途の真実を見る";
 const NEXT: Readonly<Record<CharacterMode["status"], CharacterMode>> = {
   profile: { status: "corrupted" },
   corrupted: { status: "profile" },
@@ -30,8 +31,9 @@ const TruthButton = (): ReactNode => {
       type="button"
       onClick={toggle}
       aria-pressed={mode.status === "corrupted"}
+      aria-label={LABEL}
       className={cn(
-        "diamond text-caption font-montserrat tracking-latin hover:bg-violet-from hover:text-lit-pink motion-safe:animate-breathe breathe-hover tablet:hidden absolute top-1/3 left-1/4 z-5 size-48 cursor-pointer border-none uppercase",
+        "diamond text-caption font-montserrat tracking-latin hover:bg-violet-from hover:text-lit-pink motion-safe:animate-breathe breathe-hover absolute top-1/3 left-1/4 z-5 size-48 cursor-pointer border-none uppercase",
         TONES[mode.status],
       )}
     >
