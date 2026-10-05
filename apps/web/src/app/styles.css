@@ -2,6 +2,7 @@
 @import "./base.css" layer(base);
 @import "tailwindcss/utilities.css" layer(utilities);
 @import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
+@import "lenis/dist/lenis.css";
 @import "@fontsource/montserrat/900.css";
 @import "@fontsource/noto-sans-jp/900.css";
 @import "@fontsource/zen-kaku-gothic-new/900.css";
