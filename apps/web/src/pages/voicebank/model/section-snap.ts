@@ -7,6 +7,7 @@ type SectionSnap = Readonly<{ status: "native" }> | Readonly<{ status: "eased" }
 type Span = Readonly<{ top: number; height: number }>;
 
 const FINE_POINTER = "(pointer: fine)";
+const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
 const SCROLL_LOCK = "scrollLocked";
 const ROOT_ID = "voicebank";
 const SECTION_SELECTOR = "#main, #character, #downloads, #rules";
@@ -55,7 +56,11 @@ const placer = (
 
 const sectionSnapAtom = make<SectionSnap>((get) => {
   const root = document.querySelector(`#${ROOT_ID}`);
-  if (root === null || !globalThis.matchMedia(FINE_POINTER).matches) {
+  if (
+    root === null ||
+    !globalThis.matchMedia(FINE_POINTER).matches ||
+    globalThis.matchMedia(REDUCED_MOTION).matches
+  ) {
     return { status: "native" };
   }
   const lenis = new Lenis({
