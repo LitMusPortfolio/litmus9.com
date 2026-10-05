@@ -1,6 +1,5 @@
 import { useAtom } from "@effect/atom-react";
 import { Array as Arr, Option } from "effect";
-import { constVoid } from "effect/Function";
 import type { Writable } from "effect/unstable/reactivity/Atom";
 import { Tabs } from "radix-ui";
 import { useCallback } from "react";
@@ -18,7 +17,7 @@ type ListClickHandler = NonNullable<ComponentProps<typeof Tabs.List>["onClick"]>
 type LayoutStyle = Readonly<{
   root: string;
   bar: string;
-  handleListClick: ListClickHandler;
+  handleListClick?: ListClickHandler;
 }>;
 
 const VIEWPORT_TOP = 0;
@@ -32,7 +31,7 @@ const rewindToRoot: ListClickHandler = (event) => {
 };
 
 const LAYOUT_STYLES: Readonly<Record<FilterLayout, LayoutStyle>> = {
-  inline: { root: "", bar: "mb-8", handleListClick: constVoid },
+  inline: { root: "", bar: "mb-8" },
   sticky: {
     root: "scroll-mt-header tablet:scroll-mt-header-compact",
     bar: "sticky top-header tablet:top-header-compact z-3 mb-8 py-4 bg-glass-light backdrop-blur-glass [&_h1]:mb-4",
