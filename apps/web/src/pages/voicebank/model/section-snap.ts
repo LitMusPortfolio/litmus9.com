@@ -73,10 +73,10 @@ const sectionSnapAtom = make<SectionSnap>((get) => {
     (point) => snap.add(point),
     () =>
       pointsOf(
-        Array.from(root.querySelectorAll(SECTION_SELECTOR), (section) => ({
-          top: section.getBoundingClientRect().top + globalThis.scrollY,
-          height: section.getBoundingClientRect().height,
-        })),
+        Array.from(root.querySelectorAll(SECTION_SELECTOR), (section) => {
+          const { top, height } = section.getBoundingClientRect();
+          return { top: top + globalThis.scrollY, height };
+        }),
         globalThis.innerHeight,
         document.documentElement.scrollHeight - globalThis.innerHeight,
       ),
