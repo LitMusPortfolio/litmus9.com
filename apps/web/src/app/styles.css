@@ -100,7 +100,8 @@
   --spacing-hero-figure: calc(var(--spacing-hero-figure-h) * 1.044);
   --spacing-hero-figure-x: calc(75vw - 0.36 * var(--spacing-hero-figure));
   --spacing-modal-gap: 1.2rem;
-  --spacing-header: 6rem;
+  --spacing-header: 5.25rem;
+  --spacing-header-compact: 3.5rem;
   --spacing-lift: 3px;
   --spacing-press: 1px;
 
