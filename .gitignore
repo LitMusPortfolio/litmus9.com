@@ -32,6 +32,9 @@ dist-ssr
 # AI agent worktrees
 .claude/worktrees/
 
+# Agent skills restored from skills-lock.json
+.agents/skills/
+
 .nitro
 .tanstack
 .output
@@ -40,3 +43,6 @@ dist-ssr
 .jev-lint/baseline.json
 
 .lighthouseci
+# Playwright CLI
+.playwright/
+.playwright-cli/

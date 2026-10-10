@@ -1,8 +1,8 @@
-import { make } from "effect/unstable/reactivity/Atom";
+import { Atom } from "effect/reactivity";
 
 type CharacterMode = Readonly<{ status: "profile" }> | Readonly<{ status: "corrupted" }>;
 
-const characterModeAtom = make<CharacterMode>({ status: "profile" });
+const characterModeAtom = Atom.make<CharacterMode>({ status: "profile" });
 
 export type { CharacterMode };
 export { characterModeAtom };

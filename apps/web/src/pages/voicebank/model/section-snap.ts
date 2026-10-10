@@ -1,4 +1,4 @@
-import { make } from "effect/unstable/reactivity/Atom";
+import { Atom } from "effect/reactivity";
 import Lenis from "lenis";
 import Snap from "lenis/snap";
 
@@ -54,7 +54,7 @@ const placer = (
   };
 };
 
-const sectionSnapAtom = make<SectionSnap>((get) => {
+const sectionSnapAtom = Atom.make<SectionSnap>((get) => {
   const root = document.querySelector(`#${ROOT_ID}`);
   if (
     root === null ||
