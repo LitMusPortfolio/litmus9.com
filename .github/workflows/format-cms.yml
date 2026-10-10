@@ -5,23 +5,25 @@ on:
     branches: [main]
     paths: [apps/web/src/pages/works/model/works.json]
 
-permissions:
-  contents: write
+permissions: {}
 
 jobs:
   format:
     if: contains(github.event.head_commit.message, '(via Pages CMS)')
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          node-version-file: package.json
-      - uses: pnpm/setup@v3
+          persist-credentials: true
+      - uses: voidzero-dev/setup-vp@3754dd7dbdb32bd8f6d28b6043de13ad3a75f21f # v1.21.1
         with:
-          require-lockfile: true
-      - run: pnpm exec vp fmt apps/web/src/pages/works/model/works.json
-      - uses: stefanzweifel/git-auto-commit-action@v7
+          cache: true
+          run-install: |
+            - args: ['--frozen-lockfile']
+      - run: vp fmt apps/web/src/pages/works/model/works.json
+      - uses: stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d # v7.2.0
         with:
           commit_message: "style: Pages CMS が保存した works.json を整形する"
           file_pattern: apps/web/src/pages/works/model/works.json

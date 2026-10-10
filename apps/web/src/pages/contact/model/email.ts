@@ -1,7 +1,7 @@
-import { make } from "effect/unstable/reactivity/Atom";
+import { Atom } from "effect/reactivity";
 
 type EmailVisibility = "hidden" | "revealed";
 
-const emailVisibilityAtom = make<EmailVisibility>("hidden");
+const emailVisibilityAtom = Atom.make<EmailVisibility>("hidden");
 
 export { emailVisibilityAtom };

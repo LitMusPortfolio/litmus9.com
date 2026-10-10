@@ -1,5 +1,5 @@
 import { useAtom } from "@effect/atom-react";
-import { make } from "effect/unstable/reactivity/Atom";
+import { Atom } from "effect/reactivity";
 import { Dialog } from "radix-ui";
 import { useCallback } from "react";
 import type { ReactNode } from "react";
@@ -9,7 +9,7 @@ import { MenuDrawer } from "./menu-drawer";
 
 type MenuState = "closed" | "open";
 
-const menuAtom = make<MenuState>("closed");
+const menuAtom = Atom.make<MenuState>("closed");
 
 const MobileMenu = (): ReactNode => {
   const [menu, setMenu] = useAtom(menuAtom);

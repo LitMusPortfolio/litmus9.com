@@ -1,4 +1,4 @@
-import { make } from "effect/unstable/reactivity/Atom";
+import { Atom } from "effect/reactivity";
 
 import type { DownloadItem, DownloadType } from "./downloads";
 
@@ -8,9 +8,9 @@ type DownloadDialogState =
   | Readonly<{ status: "closed" }>
   | Readonly<{ status: "open"; item: DownloadItem }>;
 
-const downloadFilterAtom = make<DownloadFilter>("all");
+const downloadFilterAtom = Atom.make<DownloadFilter>("all");
 
-const downloadDialogAtom = make<DownloadDialogState>({ status: "closed" });
+const downloadDialogAtom = Atom.make<DownloadDialogState>({ status: "closed" });
 
 export type { DownloadFilter };
 export { downloadDialogAtom, downloadFilterAtom };

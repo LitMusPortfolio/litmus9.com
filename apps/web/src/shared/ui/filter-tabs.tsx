@@ -1,6 +1,6 @@
 import { useAtom } from "@effect/atom-react";
 import { Array as Arr, Option } from "effect";
-import type { Writable } from "effect/unstable/reactivity/Atom";
+import type { Atom } from "effect/reactivity";
 import { Tabs } from "radix-ui";
 import { useCallback } from "react";
 import type { ComponentProps, ReactNode } from "react";
@@ -63,7 +63,7 @@ const FilterTabs = <Value extends string>({
   layout?: FilterLayout;
   label: string;
   tabs: readonly FilterTab<Value>[];
-  atom: Writable<Value>;
+  atom: Atom.Writable<Value>;
   children: ReactNode;
 }>): ReactNode => {
   const [value, setValue] = useAtom(atom);
