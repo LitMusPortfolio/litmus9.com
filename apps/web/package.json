@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "vp dev",
+    "test": "vp test run --passWithNoTests",
     "build": "vp build",
     "typecheck": "tsc --noEmit",
     "steiger": "steiger ./src",

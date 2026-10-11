@@ -1,8 +1,7 @@
-import { useAtomValue } from "@effect/atom-react";
 import type { ReactNode } from "react";
 
 import type { CharacterMode } from "#/pages/voicebank/model/character-state";
-import { characterModeAtom } from "#/pages/voicebank/model/character-state";
+import { useCharacterMode } from "#/pages/voicebank/model/character-state";
 import { SectionTitle } from "#/shared/ui";
 
 import { CharacterProfile } from "./character-profile";
@@ -15,7 +14,7 @@ const CONTENT: Readonly<Record<CharacterMode["status"], () => ReactNode>> = {
 };
 
 const CharacterBody = (): ReactNode => {
-  const mode = useAtomValue(characterModeAtom);
+  const mode = useCharacterMode();
   const Content = CONTENT[mode.status];
   return (
     <>

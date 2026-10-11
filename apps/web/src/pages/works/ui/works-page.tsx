@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 import type { WorksFilter } from "#/pages/works/model/filter";
-import { worksFilterAtom } from "#/pages/works/model/filter";
+import { useSetWorksFilter, useWorksFilter } from "#/pages/works/model/filter";
 import type { FilterTab } from "#/shared/ui";
 import { FilterTabs, PageSection } from "#/shared/ui";
 
@@ -19,12 +19,23 @@ const TABS: readonly FilterTab<WorksFilter>[] = [
 const TABS_LABEL = "Filter works by category";
 const TITLE = "WORKS";
 
-const WorksPage = (): ReactNode => (
-  <PageSection backdrop="litmus" decoration={SideTitle}>
-    <FilterTabs title={TITLE} layout="sticky" label={TABS_LABEL} tabs={TABS} atom={worksFilterAtom}>
-      <WorksGrid />
-    </FilterTabs>
-  </PageSection>
-);
+const WorksPage = (): ReactNode => {
+  const filter = useWorksFilter();
+  const setFilter = useSetWorksFilter();
+  return (
+    <PageSection backdrop="litmus" decoration={SideTitle}>
+      <FilterTabs
+        title={TITLE}
+        layout="sticky"
+        label={TABS_LABEL}
+        tabs={TABS}
+        value={filter}
+        onValueChange={setFilter}
+      >
+        <WorksGrid />
+      </FilterTabs>
+    </PageSection>
+  );
+};
 
 export { WorksPage };

@@ -1,9 +1,8 @@
-import { useAtom } from "@effect/atom-react";
 import { useCallback } from "react";
 import type { ReactNode } from "react";
 
 import type { CharacterMode } from "#/pages/voicebank/model/character-state";
-import { characterModeAtom } from "#/pages/voicebank/model/character-state";
+import { useCharacterMode, useSetCharacterMode } from "#/pages/voicebank/model/character-state";
 import { cn } from "#/shared/lib";
 import { Lines } from "#/shared/ui";
 
@@ -22,7 +21,8 @@ const NEXT: Readonly<Record<CharacterMode["status"], CharacterMode>> = {
 };
 
 const TruthButton = (): ReactNode => {
-  const [mode, setMode] = useAtom(characterModeAtom);
+  const mode = useCharacterMode();
+  const setMode = useSetCharacterMode();
   const toggle = useCallback(() => {
     setMode(NEXT[mode.status]);
   }, [mode, setMode]);

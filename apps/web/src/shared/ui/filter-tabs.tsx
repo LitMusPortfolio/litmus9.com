@@ -1,6 +1,4 @@
-import { useAtom } from "@effect/atom-react";
 import { Array as Arr, Option } from "effect";
-import type { Atom } from "effect/reactivity";
 import { Tabs } from "radix-ui";
 import { useCallback } from "react";
 import type { ComponentProps, ReactNode } from "react";
@@ -55,7 +53,8 @@ const FilterTabs = <Value extends string>({
   layout = "inline",
   label,
   tabs,
-  atom,
+  value,
+  onValueChange,
   children,
 }: Readonly<{
   title: string;
@@ -63,21 +62,21 @@ const FilterTabs = <Value extends string>({
   layout?: FilterLayout;
   label: string;
   tabs: readonly FilterTab<Value>[];
-  atom: Atom.Writable<Value>;
+  value: Value;
+  onValueChange: (value: Value) => void;
   children: ReactNode;
 }>): ReactNode => {
-  const [value, setValue] = useAtom(atom);
   const style = LAYOUT_STYLES[layout];
   const change = useCallback(
     (next: string) => {
       Option.map(
         Arr.findFirst(tabs, (candidate) => candidate.value === next),
         (tab) => {
-          setValue(tab.value);
+          onValueChange(tab.value);
         },
       );
     },
-    [tabs, setValue],
+    [tabs, onValueChange],
   );
   return (
     <Tabs.Root data-filter-tabs value={value} onValueChange={change} className={style.root}>

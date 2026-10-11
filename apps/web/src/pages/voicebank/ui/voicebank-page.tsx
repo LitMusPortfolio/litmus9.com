@@ -1,7 +1,6 @@
-import { useAtomMount } from "@effect/atom-react";
 import type { ReactNode } from "react";
 
-import { sectionSnapAtom } from "#/pages/voicebank/model/section-snap";
+import { useSectionSnap } from "#/pages/voicebank/model/section-snap";
 import { Backdrop } from "#/shared/ui";
 
 import { CharacterSection } from "./character-section";
@@ -10,7 +9,7 @@ import { HeroSection } from "./hero-section";
 import { RulesSection } from "./rules-section";
 
 const VoicebankPage = (): ReactNode => {
-  useAtomMount(sectionSnapAtom);
+  useSectionSnap();
   return (
     <section
       id="voicebank"

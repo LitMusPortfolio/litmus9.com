@@ -1,3 +1,4 @@
+import { useAtomMount } from "@effect/atom-react";
 import { Atom } from "effect/reactivity";
 import Lenis from "lenis";
 import Snap from "lenis/snap";
@@ -96,4 +97,8 @@ const sectionSnapAtom = Atom.make<SectionSnap>((get) => {
   return { status: "eased" };
 });
 
-export { sectionSnapAtom };
+const useSectionSnap = (): void => {
+  useAtomMount(sectionSnapAtom);
+};
+
+export { useSectionSnap };
