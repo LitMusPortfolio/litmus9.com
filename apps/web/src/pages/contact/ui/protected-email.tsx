@@ -1,8 +1,7 @@
-import { useAtom } from "@effect/atom-react";
 import { useCallback } from "react";
 import type { ReactNode } from "react";
 
-import { emailVisibilityAtom } from "#/pages/contact/model/email";
+import { useEmailVisibility, useSetEmailVisibility } from "#/pages/contact/model/email";
 
 const EMAIL_PARTS = ["6litmus9", "@", "gmail", ".", "com"] as const;
 const REVEAL_LABEL = "クリックで表示";
@@ -11,7 +10,8 @@ const OPEN_BRACKET = "【";
 const CLOSE_BRACKET = "】";
 
 const ProtectedEmail = (): ReactNode => {
-  const [visibility, setVisibility] = useAtom(emailVisibilityAtom);
+  const visibility = useEmailVisibility();
+  const setVisibility = useSetEmailVisibility();
   const reveal = useCallback(() => {
     setVisibility("revealed");
   }, [setVisibility]);

@@ -1,13 +1,12 @@
-import { useAtomValue } from "@effect/atom-react";
 import type { ReactNode } from "react";
 
-import { downloadFilterAtom } from "#/pages/voicebank/model/download-state";
+import { useDownloadFilter } from "#/pages/voicebank/model/download-state";
 import { DOWNLOADS } from "#/pages/voicebank/model/downloads";
 
 import { DownloadCard } from "./download-card";
 
 const DownloadGrid = (): ReactNode => {
-  const filter = useAtomValue(downloadFilterAtom);
+  const filter = useDownloadFilter();
   return (
     <div className="card-grid">
       {DOWNLOADS.filter((item) => filter === "all" || item.type === filter).map((item) => (

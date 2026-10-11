@@ -1,7 +1,6 @@
-import { useAtomValue } from "@effect/atom-react";
 import type { ReactNode } from "react";
 
-import { characterModeAtom } from "#/pages/voicebank/model/character-state";
+import { useCharacterMode } from "#/pages/voicebank/model/character-state";
 import { Container } from "#/shared/ui";
 
 import { CharacterBody } from "./character-body";
@@ -10,7 +9,7 @@ import { CorruptedBackdrop } from "./corrupted-backdrop";
 import { TruthButton } from "./truth-button";
 
 const CharacterSection = (): ReactNode => {
-  const mode = useAtomValue(characterModeAtom);
+  const mode = useCharacterMode();
   return (
     <section
       id="character"
