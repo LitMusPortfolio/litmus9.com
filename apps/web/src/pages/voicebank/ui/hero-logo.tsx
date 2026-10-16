@@ -8,7 +8,7 @@ const HeroLogo = (): ReactNode => (
       <img
         src="/101_Lit/Litlogo.webp"
         alt={LOGO_ALT}
-        loading="lazy"
+        loading="eager"
         className="max-h-hero-logo h-auto w-auto max-w-full"
       />
     </div>
